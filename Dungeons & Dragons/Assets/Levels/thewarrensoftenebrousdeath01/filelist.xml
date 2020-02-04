@@ -1,6 +1,0 @@
-<download name="thewarrensoftenebrousdeath01" type="Map">
- <index src="filelist.xml" dest="filelist.xml"/>
- <files>
-  <file src="level.pak" dest="level.pak" size="4056" md5="283e655ef738a5ba500467efdefa52dd"/>
- </files>
-</download>
