@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Area2D
+
+export var speed = 400
+var screen_size
+var hit
+
+func _ready():
+	screen_size = get_viewport_rect().size
+	
+
+func _process(delta):
+	var velocity = Vector2()  # The player's movement vector.
+	if Input.is_action_pressed(\"ui_right\"):
+		velocity.x += 1
+	if Input.is_action_pressed(\"ui_left\"):
+		velocity.x -= 1
+	if Input.is_action_pressed(\"ui_down\"):
+		velocity.y += 1
+	if Input.is_action_pressed(\"ui_up\"):
+		velocity.y -= 1
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+	if hit == false:
+		position += velocity * delta
+		position.x = clamp(position.x, 0, screen_size.x)
+		position.y = clamp(position.y, 0, screen_size.y)
+	hit = false
+
+func _on_Player_body_entered(body):
+	hit = true
+"
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16.0138, 15.9102 )
+
+[node name="Player" type="Area2D"]
+script = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.429276, -0.214638 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
