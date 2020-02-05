@@ -12,7 +12,7 @@ colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1 )
 [sub_resource type="GradientTexture" id=3]
 gradient = SubResource( 2 )
 
-[node name="Node2D" type="Node2D"]
+[node name="The Warrens of Tenebrous Node2D" type="Node2D"]
 
 [node name="The Warrens of Tenebrous Death 01" type="Sprite" parent="."]
 position = Vector2( 647.412, 405.221 )
