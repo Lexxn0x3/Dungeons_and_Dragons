@@ -11,4 +11,7 @@ script = ExtResource( 3 )
 z_index = 1
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 719.01, 1606.21 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="BlackScreen" type="Node2D" parent="."]
