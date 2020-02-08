@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://Player/PlayerCamera.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
@@ -32,8 +33,7 @@ func _process(delta):                 #every Frame
 	if hit == true:
 		if velocityTemp.y > 0:
 			position.y += velocity.y * delta * -1
-			if OS.is_debug_build(): print(velocity)
-			
+	#		if OS.is_debug_build(): print(velocity)
 
 
 func _on_Player_body_entered(body):            # is called if player hits an object
@@ -73,7 +73,10 @@ position = Vector2( -0.429276, -0.214638 )
 shape = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+rotating = true
 current = true
 smoothing_enabled = true
+script = ExtResource( 1 )
+zoomMin = 0.3
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Player_body_exited"]

@@ -17,3 +17,4 @@ z_index = 100
 speed = 400
 
 [node name="The Dark Pit of Gothmog of Udun" parent="." instance=ExtResource( 1 )]
+position = Vector2( -7, 9 )
