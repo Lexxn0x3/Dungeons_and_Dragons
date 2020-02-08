@@ -1,13 +1,30 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 0 )
 
-[node name="MarginContainer" type="MarginContainer"]
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://MainMenu/FunSized.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 45
+font_data = SubResource( 2 )
+
+[node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.05054
-margin_right = 2.05054
+margin_left = 4.76003
+margin_right = 4.76001
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_constants/margin_right = 120
 custom_constants/margin_top = 80
 custom_constants/margin_left = 120
@@ -16,41 +33,90 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 margin_left = 120.0
 margin_top = 80.0
 margin_right = 1800.0
 margin_bottom = 1000.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 51.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 223.0
 margin_bottom = 920.0
 alignment = 1
 
-[node name="Start" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 426.0
-margin_right = 51.0
-margin_bottom = 440.0
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 223.0
+margin_bottom = 227.0
+size_flags_vertical = 3
 custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Start"
 
-[node name="Map" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 444.0
-margin_right = 51.0
+[node name="Map" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 231.0
+margin_right = 223.0
 margin_bottom = 458.0
+size_flags_vertical = 3
 custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Map"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Options" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 462.0
-margin_right = 51.0
-margin_bottom = 476.0
+margin_right = 223.0
+margin_bottom = 689.0
+size_flags_vertical = 3
 custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Options"
 
-[node name="Quit" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 480.0
-margin_right = 51.0
-margin_bottom = 494.0
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 693.0
+margin_right = 223.0
+margin_bottom = 920.0
+size_flags_vertical = 3
 custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Quit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 227.0
+margin_right = 227.0
+margin_bottom = 920.0
+alignment = 1
+
+[node name="ItemList" type="ItemList" parent="."]
+anchor_left = 0.197
+anchor_top = 0.5
+anchor_right = 0.197
+anchor_bottom = 0.5
+margin_left = 10.2845
+margin_top = -455.456
+margin_right = 389.285
+margin_bottom = 464.544
+size_flags_vertical = 3
+items = [ "The Dark Pit of Gothmog of Udun", null, false, "The Warrens of Tenebrous Death", null, false ]
+max_columns = 5
+same_column_width = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="."]
+anchor_left = 0.206
+anchor_top = 0.519
+anchor_right = 0.206
+anchor_bottom = 0.519
+margin_left = 6.63715
+margin_top = -61.9688
+margin_right = 198.637
+margin_bottom = -19.9688
+text = "Fullscreen"
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Map" to="." method="_on_Map_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="CheckBox" to="." method="_on_CheckBox_pressed"]

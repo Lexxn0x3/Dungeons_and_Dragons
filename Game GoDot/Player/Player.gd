@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Player movement speed
-export var speed = 75
+export var speed = 400
 
 func _physics_process(delta):
 	# Get player input
