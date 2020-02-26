@@ -14,5 +14,11 @@ func _physics_process(delta):
 		direction = direction.normalized()
 	
 	# Apply movement
-	var movement = speed * direction * delta
+	var speednew
+	if(Input.is_action_pressed("walk_slow")):
+		speednew = speed/5
+	else:
+		speednew = speed
+	
+	var movement = speednew * direction * delta
 	move_and_collide(movement)
