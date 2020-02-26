@@ -20,11 +20,11 @@ func _input(ev):
 
 func _on_MainMenu_hitPlay():
 	var item = $MainMenu.get_selected_map()
-	
-	if item == PoolIntArray([0]):
-		mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
-	if item == PoolIntArray([1]):
-		mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
-	map = mapScene.instance()
-	add_child(map)
-	add_child(player)
+	if item != PoolIntArray():
+		if item == PoolIntArray([0]):
+			mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
+		if item == PoolIntArray([1]):
+			mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
+		map = mapScene.instance()
+		add_child(map)
+		add_child(player)
