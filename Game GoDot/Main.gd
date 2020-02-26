@@ -20,14 +20,15 @@ func _process(delta):
 	pass
 
 func _input(ev):
-	if Input.is_action_pressed("ui_cancel") && playing == false:
+	if Input.is_action_pressed("ui_cancel") && playing == true:
 		menu = EscMenu.instance()
 		add_child(menu)
 		playing = false
 		print("add")
-	if Input.is_action_pressed("ui_cancel") && playing == true:
-		remove_child(menu)
-		print("remove")
+#	if Input.is_action_pressed("ui_cancel") && playing == false:
+#		remove_child(menu)
+#		print("remove")
+#		playing = true
 
 func _on_MainMenu_hitPlay():
 	var item = $MainMenu.get_selected_map()

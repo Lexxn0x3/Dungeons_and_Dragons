@@ -1,6 +1,7 @@
 extends Node2D
 
 
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -18,3 +19,7 @@ func _ready():
 
 func _quit_Button_pressed():
 	get_tree().quit()
+
+
+func _on_Resume_pressed():
+	pass
