@@ -27,8 +27,8 @@ func switch_Menu_visibility():
 		$MarginContainer/HBoxContainer/VBoxContainer/Quit.show()
 		print("show")
 
+#untile here all Menu button funktions of the MainMenu
 func _on_Start_pressed():
-	switch_Menu_visibility()
 	emit_signal("hitPlay")
 
 

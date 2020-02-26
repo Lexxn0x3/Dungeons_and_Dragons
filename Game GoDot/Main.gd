@@ -4,19 +4,30 @@ var map
 var playerScene = load("res://Player/Player.tscn")
 var player = playerScene.instance()
 
+#Esc Menu
+var EscMenu
+var menu
+
+var playing = false
+
 signal switchMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	EscMenu = load("res://EscMenu.tscn")
 
 func _process(delta):
 	pass
 
 func _input(ev):
-	if Input.is_action_pressed("ui_cancel"):
-		emit_signal("switchMenu")
-		print("switch")
+	if Input.is_action_pressed("ui_cancel") && playing == false:
+		menu = EscMenu.instance()
+		add_child(menu)
+		playing = false
+		print("add")
+	if Input.is_action_pressed("ui_cancel") && playing == true:
+		remove_child(menu)
+		print("remove")
 
 func _on_MainMenu_hitPlay():
 	var item = $MainMenu.get_selected_map()
@@ -28,3 +39,5 @@ func _on_MainMenu_hitPlay():
 		map = mapScene.instance()
 		add_child(map)
 		add_child(player)
+		$MainMenu.switch_Menu_visibility()
+		playing = true
