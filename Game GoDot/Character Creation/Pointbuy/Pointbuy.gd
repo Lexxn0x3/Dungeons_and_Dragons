@@ -200,3 +200,17 @@ func _on_Charisma_DOWN_pressed():
 		points_left = points_left + 2
 		charisma = charisma - 1
 	pass # Replace with function body.
+
+
+	# min = 8
+	# max_Points = 27
+	#Chosts:
+		#8 = 0
+		#9 = 1
+		#10 = 2
+		#11 = 3
+		#12 = 4
+		#13 = 5
+		#14 = 7
+		#15 = 9
+	# max starting points = 15 (without race modifier)

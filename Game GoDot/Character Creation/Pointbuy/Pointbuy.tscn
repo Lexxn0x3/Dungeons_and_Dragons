@@ -1,20 +1,20 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Pictures/Arrow_up.png" type="Texture" id=1]
-[ext_resource path="res://Character Creation/Pointbuy.gd" type="Script" id=2]
-[ext_resource path="res://MainMenu/FunSized.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Pictures/Arrow_Down.png" type="Texture" id=4]
+[ext_resource path="res://MainMenu/FunSized.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Pictures/Arrow_Down.png" type="Texture" id=2]
+[ext_resource path="res://Pictures/Arrow_up.png" type="Texture" id=3]
+[ext_resource path="res://Character Creation/Pointbuy/Pointbuy.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
 
 [node name="Pointbuy" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 
 [node name="Strength" type="Label" parent="."]
 margin_left = 158.947
@@ -32,7 +32,7 @@ margin_left = 5.8223
 margin_top = -112.265
 margin_right = 117.822
 margin_bottom = -6.26492
-icon = ExtResource( 1 )
+icon = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -42,7 +42,7 @@ margin_left = 8.26813
 margin_top = 134.93
 margin_right = 120.268
 margin_bottom = 240.93
-icon = ExtResource( 4 )
+icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -74,7 +74,7 @@ margin_left = 12.6709
 margin_top = -112.589
 margin_right = 124.671
 margin_bottom = -6.58911
-icon = ExtResource( 1 )
+icon = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -84,7 +84,7 @@ margin_left = 9.46869
 margin_top = 125.158
 margin_right = 121.469
 margin_bottom = 231.158
-icon = ExtResource( 4 )
+icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -116,7 +116,7 @@ margin_left = 8.0
 margin_top = -99.0
 margin_right = 120.0
 margin_bottom = 7.0
-icon = ExtResource( 1 )
+icon = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -126,7 +126,7 @@ margin_left = 2.68732
 margin_top = 127.156
 margin_right = 114.687
 margin_bottom = 233.156
-icon = ExtResource( 4 )
+icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -158,7 +158,7 @@ margin_left = 11.2609
 margin_top = -112.018
 margin_right = 123.261
 margin_bottom = -6.01807
-icon = ExtResource( 1 )
+icon = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -168,7 +168,7 @@ margin_left = 5.16809
 margin_top = 121.902
 margin_right = 117.168
 margin_bottom = 227.902
-icon = ExtResource( 4 )
+icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -200,7 +200,7 @@ margin_left = 14.0626
 margin_top = -128.186
 margin_right = 126.063
 margin_bottom = -22.1865
-icon = ExtResource( 1 )
+icon = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -210,7 +210,7 @@ margin_left = 13.4611
 margin_top = 128.415
 margin_right = 125.461
 margin_bottom = 234.415
-icon = ExtResource( 4 )
+icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -227,10 +227,10 @@ __meta__ = {
 }
 
 [node name="Charisma" type="Label" parent="."]
-margin_left = 913.201
-margin_top = 795.649
-margin_right = 1050.2
-margin_bottom = 921.649
+margin_left = 903.131
+margin_top = 793.132
+margin_right = 1040.13
+margin_bottom = 919.132
 custom_fonts/font = SubResource( 1 )
 text = "10"
 __meta__ = {
@@ -242,7 +242,7 @@ margin_left = 5.62073
 margin_top = -110.143
 margin_right = 117.621
 margin_bottom = -4.14307
-icon = ExtResource( 1 )
+icon = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -252,7 +252,7 @@ margin_left = 12.3575
 margin_top = 132.147
 margin_right = 124.358
 margin_bottom = 238.147
-icon = ExtResource( 4 )
+icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -73,6 +73,8 @@ func _process(delta):
 	
 	if(Input.isaaction_("walk_slow")):
 		XP = XP + 100
+		
+		
 	
 	var level			#level festlegen
 	if(XP<300):
@@ -150,19 +152,6 @@ func _process(delta):
 				# 305000XP = LVL 19 = +6 Proficiency
 				# 355000XP = LVL 20 = +6 Proficiency
 				
-	
-	# min = 8
-	# max_Points = 27
-	#Chosts:
-		#8 = 0
-		#9 = 1
-		#10 = 2
-		#11 = 3
-		#12 = 4
-		#13 = 5
-		#14 = 7
-		#15 = 9
-	# max starting points = 15 (without race modifier)
 	#Modifier
 		# 8 - 9 = -1
 		# 10 - 11 = 0
@@ -171,10 +160,12 @@ func _process(delta):
 		# 16 - 17 = 3
 		# 18 - 19 = 4
 		# 20 = 5
-		
+	
+	
 onready var strength = get_node("res://Character Creation/Pointbuy.gd").get(strength)
 onready var dexterity = get_node("res://Character Creation/Pointbuy.gd").get(dexterity)
 onready var constitution = get_node("res://Character Creation/Pointbuy.gd").get(constitution)
 onready var intelligence = get_node("res://Character Creation/Pointbuy.gd").get(intelligence)
 onready var wisdom = get_node("res://Character Creation/Pointbuy.gd").get(wisdom)
 onready var charisma = get_node("res://Character Creation/Pointbuy.gd").get(charisma)
+

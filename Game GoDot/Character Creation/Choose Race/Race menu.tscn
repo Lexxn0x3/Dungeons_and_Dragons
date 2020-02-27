@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Character Creation/Choose Race/Races.gd" type="Script" id=1]
+
+[node name="Race menu" type="Node2D"]
+
+[node name="ItemList" type="ItemList" parent="."]
+margin_right = 362.0
+margin_bottom = 1082.0
+allow_reselect = true
+same_column_width = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
