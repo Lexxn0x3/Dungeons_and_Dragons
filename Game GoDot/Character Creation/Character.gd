@@ -5,50 +5,7 @@ extends Node
 func _process(delta):
 	
 	var Race = 0 # 1-40
-			
-			# Link:		https://www.dndbeyond.com/races
-			# 0 = not set
-			# 1 = Dragonborn (PHB)
-			# 2 = Dwarf (PHB)
-			# 3 = Elf (PHB)
-			# 4 = Gnome (PHB)
-			# 5 = Half-Elf (PHB)
-			# 6 = Halfling (PHB)
-			# 7 = Half-Orc (PHB)
-			# 8 = Human (PHB)
-			# 9 = Tiefling (PHB)
-			# 10 = Aarakocra (EEPC)
-			# 11 = Genasi (EEPC)
-			# 12 = Goliath (EEPC)
-			# 13 = Aasimar (Need VGTM)
-			# 14 = Bugbear (Need VGTM)
-			# 15 = Firbolg (Need VGTM)
-			# 16 = Goblin (Need VGTM)
-			# 17 = Hobgoblin (Need VGTM)
-			# 18 = Kenku (Need VGTM)
-			# 19 = Kobold (Need VGTM)
-			# 20 = Lizardfolk (Need VGTM)
-			# 21 = Orc (Need VGTM)
-			# 22 = Tabaxi (Need VGTM)
-			# 23 = Triton (Need VGTM)
-			# 24 = Yuan-ti Pureblood (Need VGTM)
-			# 25 = Feral Tiefling (Need SCAG)
-			# 26 = Tortle (Need TTP)
-			# 27 = Changeling (Need ERFTLW)
-			# 28 = Kalashtar (Need ERFTLW)
-			# 29 = Orc of Eberron (Need ERFTLW)
-			# 30 = Shifter (Need ERFTLW)
-			# 31 = Warforged (Need ERFTLW)
-			# 32 = Gith (Need MTOF)
-			# 33 = Centaur (Need GGTR)(Fabi)
-			# 34 = Loxodon (Need GGTR)(Fabi)
-			# 35 = Minotaur (Need GGTR)(Fabi)
-			# 36 = Simic Hybrid (Need GGTR)(Fabi)
-			# 37 = Vedalken (Need GGTR)(Fabi)
-			# 38 = Verdan (Need AI)
-			# 39 = Locathah (Need LR)
-			# 40 = Grung (Need OGA)
-			
+
 	var Character_class = 0 # 0-14
 			
 			#Link:		https://www.dndbeyond.com/classes
@@ -161,11 +118,16 @@ func _process(delta):
 		# 18 - 19 = 4
 		# 20 = 5
 	
-	
-onready var strength = get_node("res://Character Creation/Pointbuy.gd").get(strength)
-onready var dexterity = get_node("res://Character Creation/Pointbuy.gd").get(dexterity)
-onready var constitution = get_node("res://Character Creation/Pointbuy.gd").get(constitution)
-onready var intelligence = get_node("res://Character Creation/Pointbuy.gd").get(intelligence)
-onready var wisdom = get_node("res://Character Creation/Pointbuy.gd").get(wisdom)
-onready var charisma = get_node("res://Character Creation/Pointbuy.gd").get(charisma)
+	_get_stats()
 
+
+
+
+func _get_stats():
+	var strength = get_node("Pointbuy.gd").strength
+	var dexterity = get_node("Pointbuy.gd").dexterity
+	var constitution = get_node("Pointbuy.gd").constitution
+	var intelligence = get_node("Pointbuy.gd").intelligence
+	var wisdom = get_node("Pointbuy.gd").wisdom
+	var charisma = get_node("Pointbuy.gd").charisma
+	pass

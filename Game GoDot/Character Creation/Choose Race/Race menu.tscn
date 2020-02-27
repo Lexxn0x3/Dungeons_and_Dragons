@@ -1,15 +1,214 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Character Creation/Choose Race/Races.gd" type="Script" id=1]
+[ext_resource path="res://MainMenu/FunSized.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Character Creation/Race menu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 75
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 2 )
 
 [node name="Race menu" type="Node2D"]
+script = ExtResource( 3 )
 
-[node name="ItemList" type="ItemList" parent="."]
-margin_right = 362.0
-margin_bottom = 1082.0
+[node name="Race Menu" type="Label" parent="."]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 537.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 1 )
+text = "Race Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="Race Menu"]
+margin_left = -6.0
+margin_top = 112.0
+margin_right = 493.0
+margin_bottom = 1081.0
+custom_fonts/font = SubResource( 2 )
 allow_reselect = true
 same_column_width = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Race-Info" type="Node" parent="."]
+
+[node name="Panel" type="Panel" parent="Race-Info"]
+margin_left = 569.197
+margin_top = -4.55271
+margin_right = 1923.2
+margin_bottom = 1070.45
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Modifiers_text" type="Label" parent="Race-Info/Panel"]
+margin_left = 1048.0
+margin_top = 544.301
+margin_right = 1216.0
+margin_bottom = 583.301
+custom_fonts/font = SubResource( 3 )
+text = "Modifiers"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Strength" type="Label" parent="Race-Info/Panel/Modifiers_text"]
+margin_left = -96.9004
+margin_top = 99.7505
+margin_right = 71.0996
+margin_bottom = 138.75
+custom_fonts/font = SubResource( 3 )
+text = "Strength:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Modifier" type="Label" parent="Race-Info/Panel/Modifiers_text/Strength"]
+margin_left = 210.0
+margin_top = -1.0
+margin_right = 250.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 4 )
+
+[node name="Dexterity" type="Label" parent="Race-Info/Panel/Modifiers_text"]
+margin_left = -104.304
+margin_top = 157.802
+margin_right = 63.6958
+margin_bottom = 196.802
+custom_fonts/font = SubResource( 3 )
+text = "Dexterity"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Modifier" type="Label" parent="Race-Info/Panel/Modifiers_text/Dexterity"]
+margin_left = 215.775
+margin_top = -2.85071
+margin_right = 255.775
+margin_bottom = 37.1493
+custom_fonts/font = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Constitution" type="Label" parent="Race-Info/Panel/Modifiers_text"]
+margin_left = -150.658
+margin_top = 220.318
+margin_right = 62.342
+margin_bottom = 259.318
+custom_fonts/font = SubResource( 3 )
+text = "Constitution:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Modifier" type="Label" parent="Race-Info/Panel/Modifiers_text/Constitution"]
+margin_left = 263.758
+margin_top = -1.83423
+margin_right = 303.758
+margin_bottom = 38.1658
+custom_fonts/font = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Intelligence" type="Label" parent="Race-Info/Panel/Modifiers_text"]
+margin_left = -132.125
+margin_top = 294.625
+margin_right = 62.8749
+margin_bottom = 333.625
+custom_fonts/font = SubResource( 3 )
+text = "Intelligence"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Modifier" type="Label" parent="Race-Info/Panel/Modifiers_text/Intelligence"]
+margin_left = 246.854
+margin_top = 1.23627
+margin_right = 286.854
+margin_bottom = 41.2363
+custom_fonts/font = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wisdom" type="Label" parent="Race-Info/Panel/Modifiers_text"]
+margin_left = -69.6211
+margin_top = 358.664
+margin_right = 98.3789
+margin_bottom = 397.664
+custom_fonts/font = SubResource( 3 )
+text = "Wisdom"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Modifier" type="Label" parent="Race-Info/Panel/Modifiers_text/Wisdom"]
+margin_left = 185.979
+margin_top = 5.61658
+margin_right = 225.979
+margin_bottom = 45.6166
+custom_fonts/font = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Charisma" type="Label" parent="Race-Info/Panel/Modifiers_text"]
+margin_left = -93.0532
+margin_top = 426.003
+margin_right = 74.9468
+margin_bottom = 465.003
+custom_fonts/font = SubResource( 3 )
+text = "Charisma"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Modifier" type="Label" parent="Race-Info/Panel/Modifiers_text/Charisma"]
+margin_left = 210.368
+margin_top = -2.26355
+margin_right = 250.368
+margin_bottom = 37.7365
+custom_fonts/font = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Race-Info/Panel"]
+margin_left = 952.303
+margin_top = 38.6461
+margin_right = 1308.3
+margin_bottom = 499.646
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Race-Info/Panel"]
+margin_left = 19.339
+margin_top = 28.1295
+margin_right = 905.339
+margin_bottom = 140.129
+custom_fonts/font = SubResource( 5 )
+[connection signal="item_selected" from="Race Menu/ItemList" to="Race Menu/ItemList" method="_on_ItemList_item_selected"]
