@@ -28,9 +28,9 @@ func _process(delta):
 	else:
 		$"Dexterity/Dexterity UP".disabled = true
 	if(dexterity<9):
-		$"Strength/Strength DOWN".disabled = true
+		$"Dexterity/Dexterity DOWN".disabled = true
 	else:
-		$"Strength/Strength DOWN".disabled = false
+		$"Dexterity/Dexterity DOWN".disabled = false
 	
 	if(((points_left>0&&constitution<14)||(points_left>1&&constitution>13))&&(constitution<15)):
 		$"Constitution/Constitution UP".disabled = false
