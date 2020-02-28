@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Character Creation/Choose Race/Races.gd" type="Script" id=1]
 [ext_resource path="res://MainMenu/FunSized.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Character Creation/Race menu.gd" type="Script" id=3]
+[ext_resource path="res://Character Creation/Choose Race/Race menu.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 75
@@ -40,9 +40,9 @@ __meta__ = {
 
 [node name="ItemList" type="ItemList" parent="Race Menu"]
 margin_left = -6.0
-margin_top = 112.0
+margin_top = 112.404
 margin_right = 493.0
-margin_bottom = 1081.0
+margin_bottom = 1044.4
 custom_fonts/font = SubResource( 2 )
 allow_reselect = true
 same_column_width = true
@@ -54,10 +54,61 @@ __meta__ = {
 [node name="Race-Info" type="Node" parent="."]
 
 [node name="Panel" type="Panel" parent="Race-Info"]
-margin_left = 569.197
-margin_top = -4.55271
-margin_right = 1923.2
-margin_bottom = 1070.45
+margin_left = 556.894
+margin_top = 5.70007
+margin_right = 1910.9
+margin_bottom = 1080.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Traits and Feats" type="Label" parent="Race-Info/Panel"]
+margin_left = 52.5917
+margin_top = 668.73
+margin_right = 292.592
+margin_bottom = 707.73
+custom_fonts/font = SubResource( 3 )
+text = "Traits & Feats"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="RichTextLabel" parent="Race-Info/Panel/Traits and Feats"]
+margin_left = -10.0
+margin_top = 49.0
+margin_right = 793.0
+margin_bottom = 370.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Infos" type="Label" parent="Race-Info/Panel"]
+margin_left = 50.5411
+margin_top = 149.94
+margin_right = 290.541
+margin_bottom = 188.94
+custom_fonts/font = SubResource( 3 )
+text = "Infos"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="RichTextLabel" parent="Race-Info/Panel/Infos"]
+margin_left = -10.0
+margin_top = 49.0
+margin_right = 385.0
+margin_bottom = 491.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subclases" type="Label" parent="Race-Info/Panel"]
+margin_left = 497.562
+margin_top = 143.788
+margin_right = 737.562
+margin_bottom = 182.788
+custom_fonts/font = SubResource( 3 )
+text = "Subclases"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -134,10 +185,10 @@ __meta__ = {
 }
 
 [node name="Intelligence" type="Label" parent="Race-Info/Panel/Modifiers_text"]
-margin_left = -132.125
-margin_top = 294.625
-margin_right = 62.8749
-margin_bottom = 333.625
+margin_left = -140.327
+margin_top = 290.524
+margin_right = 54.6729
+margin_bottom = 329.524
 custom_fonts/font = SubResource( 3 )
 text = "Intelligence"
 __meta__ = {
@@ -197,18 +248,33 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Race-Info/Panel"]
-margin_left = 952.303
+margin_left = 950.252
 margin_top = 38.6461
-margin_right = 1308.3
+margin_right = 1306.25
 margin_bottom = 499.646
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="Label" parent="Race-Info/Panel"]
-margin_left = 19.339
-margin_top = 28.1295
-margin_right = 905.339
-margin_bottom = 140.129
+[node name="Race_Name" type="Label" parent="Race-Info/Panel"]
+margin_left = 12.8483
+margin_top = 23.8989
+margin_right = 184.848
+margin_bottom = 135.899
 custom_fonts/font = SubResource( 5 )
+text = "Race:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Race-Info/Panel/Race_Name"]
+margin_left = 203.344
+margin_top = 4.23059
+margin_right = 1089.34
+margin_bottom = 116.23
+custom_fonts/font = SubResource( 5 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="item_selected" from="Race Menu/ItemList" to="Race Menu/ItemList" method="_on_ItemList_item_selected"]
