@@ -39,10 +39,10 @@ __meta__ = {
 }
 
 [node name="ItemList" type="ItemList" parent="Race Menu"]
-margin_left = -6.0
-margin_top = 112.404
-margin_right = 493.0
-margin_bottom = 1044.4
+margin_left = -0.989482
+margin_top = 117.414
+margin_right = 498.01
+margin_bottom = 1049.41
 custom_fonts/font = SubResource( 2 )
 allow_reselect = true
 same_column_width = true
@@ -74,9 +74,9 @@ __meta__ = {
 }
 
 [node name="Info" type="RichTextLabel" parent="Race-Info/Panel/Traits and Feats"]
-margin_left = -10.0
+margin_left = -15.0105
 margin_top = 49.0
-margin_right = 793.0
+margin_right = 787.99
 margin_bottom = 370.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -102,13 +102,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Subclases" type="Label" parent="Race-Info/Panel"]
+[node name="Subraces" type="Label" parent="Race-Info/Panel"]
 margin_left = 497.562
 margin_top = 143.788
 margin_right = 737.562
 margin_bottom = 182.788
 custom_fonts/font = SubResource( 3 )
-text = "Subclases"
+text = "Subraces"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Race-Info/Panel/Subraces"]
+margin_left = -6.85205
+margin_top = 282.0
+margin_right = 429.148
+margin_bottom = 492.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subrace menu" type="ItemList" parent="Race-Info/Panel/Subraces"]
+margin_left = -21.8521
+margin_top = 53.3404
+margin_right = 434.148
+margin_bottom = 257.34
+custom_fonts/font = SubResource( 2 )
+allow_reselect = true
+same_column_width = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -249,9 +270,9 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="Race-Info/Panel"]
 margin_left = 950.252
-margin_top = 38.6461
+margin_top = 52.0076
 margin_right = 1306.25
-margin_bottom = 499.646
+margin_bottom = 513.008
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -278,3 +299,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="item_selected" from="Race Menu/ItemList" to="Race Menu/ItemList" method="_on_ItemList_item_selected"]
+[connection signal="item_activated" from="Race-Info/Panel/Subraces/Subrace menu" to="." method="_on_ItemList_item_activated"]

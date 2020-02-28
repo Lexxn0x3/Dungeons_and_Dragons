@@ -7,6 +7,8 @@ var constitution_modifier = 0
 var intelligence_modifier = 0
 var wisdom_modifier = 0
 var charisma_modifier = 0
+var subraces_initiated = false
+var subrace
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,8 +18,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var race = get_node("Race Menu/ItemList").racetemp
+	subraces_initiated = $"Race Menu/ItemList".subraces_initiated_temp
 	_update_modifiers()
 	_reset_info_screen()
+	subrace = _get_selected_item()
 	
 	if(race == 0):			#edit Infos Later
 		$"Race-Info/Panel/Race_Name/Name".text = "Dragonborn"
@@ -25,6 +29,39 @@ func _process(delta):
 		charisma_modifier = 1
 		$"Race-Info/Panel/Traits and Feats/Info".text = ""	#	\n = Zeilenumbruch
 		$"Race-Info/Panel/Infos/Info".text = ""
+		$"Race-Info/Panel/Subraces".text = "Draconic Ancestry"
+		if(!subraces_initiated):
+			$"Race-Info/Panel/Subraces/Subrace menu".add_item("Black Dragon")
+			$"Race-Info/Panel/Subraces/Subrace menu".add_item("Blue Dragon")
+			$"Race-Info/Panel/Subraces/Subrace menu".add_item("Brass Dragon")
+			$"Race-Info/Panel/Subraces/Subrace menu".add_item("Bronze Dragon")
+			$"Race-Info/Panel/Subraces/Subrace menu".add_item("Copper Dragon")
+			$"Race-Info/Panel/Subraces/Subrace menu".add_item("Gold Dragon")
+			$"Race-Info/Panel/Subraces/Subrace menu".add_item("Green Dragon")
+			$"Race-Info/Panel/Subraces/Subrace menu".add_item("Red Dragon")
+			$"Race-Info/Panel/Subraces/Subrace menu".add_item("Silver Dragon")
+			$"Race-Info/Panel/Subraces/Subrace menu".add_item("White Dragon")
+			subraces_initiated = true
+		if(subrace == 0):
+			$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
+		elif(subrace == 1):
+			$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
+		elif(subrace == 2):
+			$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
+		elif(subrace == 3):
+			$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
+		elif(subrace == 4):
+			$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
+		elif(subrace == 5):
+			$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
+		elif(subrace == 6):
+			$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
+		elif(subrace == 7):
+			$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
+		elif(subrace == 8):
+			$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
+		elif(subrace == 9):
+			$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
 	elif(race == 1):
 		$"Race-Info/Panel/Race_Name/Name".text = "Dwarf"
 		constitution_modifier = 2
@@ -295,4 +332,16 @@ func _reset_info_screen():
 	$"Race-Info/Panel/Traits and Feats/Info".text = ""
 	$"Race-Info/Panel/Race_Name/Name".text = ""
 	$"Race-Info/Panel/Infos/Info".text = ""
+	$"Race-Info/Panel/Subraces".text = "Subraces"
+	$"Race-Info/Panel/Subraces/RichTextLabel".text = ""
+	if($"Race Menu/ItemList".rachechangedtemp):
+		$"Race-Info/Panel/Subraces/Subrace menu".clear()
+		$"Race Menu/ItemList".rachechangedtemp = false
+	pass
+func _get_selected_item():
+	var i = 0
+	while(i<$"Race-Info/Panel/Subraces/Subrace menu".get_item_count()):
+		if($"Race-Info/Panel/Subraces/Subrace menu".is_selected(i)):
+			return i
+		i = i + 1
 	pass

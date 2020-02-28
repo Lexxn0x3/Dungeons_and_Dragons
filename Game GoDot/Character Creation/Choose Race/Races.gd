@@ -3,6 +3,8 @@ extends ItemList
 
 # Declare member variables here. Examples:
 var racetemp
+var rachechangedtemp
+var subraces_initiated_temp
 
 			
 			# Link:		https://www.dndbeyond.com/races
@@ -96,13 +98,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	rachechangedtemp = false
+	subraces_initiated_temp = true
 	var i = 0
-	while(i>40):
+	while(i>get_item_count()):
 		_on_ItemList_item_selected(i)
 	pass
 
 
 func _on_ItemList_item_selected(index):
+	subraces_initiated_temp = false
 	racetemp = index
+	rachechangedtemp = true
 	pass # Replace with function body.
