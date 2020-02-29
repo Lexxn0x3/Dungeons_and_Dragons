@@ -49,3 +49,25 @@ func _on_CheckBox_pressed():
 
 func _on_Options_pressed():
 	get_parent()._instance_options()                                            #calls the funktion _instance_optons from the MainScene                           #gets value form the file and returns it
+
+
+var _player_name = ""
+
+func _on_TextField_text_changed(new_text):
+	_player_name = new_text
+
+func _on_CreateButton_pressed():
+	if _player_name == "":
+		return
+	Network.create_server(_player_name)
+	_load_game()
+
+func _on_JoinButton_pressed():
+	if _player_name == "":
+		return
+	Network.connect_to_server(_player_name)
+	_load_game()
+
+func _load_game():
+	#get_tree().change_scene('res://Game.tscn')
+	get_parent()._on_MainMenu_hitPlay()
