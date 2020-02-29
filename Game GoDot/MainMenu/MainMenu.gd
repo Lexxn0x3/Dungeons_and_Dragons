@@ -9,6 +9,9 @@ onready var itemList = get_node("ItemList")
 func _ready():
 	itemList.hide()
 	$CheckBox.hide()
+	
+	if _read_ConfigFile("Graphics", "Fullscreen") == true||false:
+		OS.window_fullscreen = _read_ConfigFile("Graphics", "Fullscreen")
 
 func _process(delta):
 	pass
@@ -49,9 +52,30 @@ func get_selected_map():
 
 func _on_CheckBox_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
+	if OS.window_fullscreen == false:
+		_set_ConfigFile("Graphics", "Fullscreen", false)
+	else:
+		_set_ConfigFile("Graphics", "Fullscreen", true)
+	#print(OS.window_fullscreen)
 
 func _on_Options_pressed():
 	if $CheckBox.is_visible_in_tree():
 		$CheckBox.hide()
 	else:
 		$CheckBox.show()
+		
+		
+func _set_ConfigFile(section, key, key_value):                                  #funktion to set the ini Config File at C:\Users\User\AppData\Roaming\Godot\app_userdata\Dungeons & Dragons
+	var config = ConfigFile.new()
+	var err = config.load("user://settings.cfg")                                #loading config file
+	if err == OK: # If not, something went wrong with the file loading
+		config.set_value(section, key, key_value)                               #sets the input variables from the funktion
+		# Save the changes by overwriting the previous file
+		config.save("user://settings.cfg")                                      #saves all the stuff to the fle
+		#print("saved")
+		
+func _read_ConfigFile(section, key):                                            #funktion to read the ini Config File at C:\Users\User\AppData\Roaming\Godot\app_userdata\Dungeons & Dragons
+	var config = ConfigFile.new()
+	var err = config.load("user://settings.cfg")                                #loading config file
+	if err == OK: # If not, something went wrong with the file loading
+		return (config.get_value(section, key))                                 #gets value form the file and returns it
