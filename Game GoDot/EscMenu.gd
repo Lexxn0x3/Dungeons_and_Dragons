@@ -22,4 +22,17 @@ func _quit_Button_pressed():
 
 
 func _on_Resume_pressed():
-	pass
+	get_parent().playing = true
+	self.queue_free()
+	if get_parent().optionsShown == true:
+		get_parent()._instance_options()
+
+
+func _on_Options_pressed():
+	get_parent()._instance_options()
+
+
+func _on_MainMenu_button_pressed():
+	get_parent()._queue_free_player_map_escMenu_options()
+	get_parent()._instance_MainMenu()
+	get_parent().playing = false

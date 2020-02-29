@@ -17,6 +17,7 @@ extents = Vector2( 16.0566, 15.8949 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
+speed = 200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.150009, 0.268127 )
