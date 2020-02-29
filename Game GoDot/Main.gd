@@ -15,6 +15,8 @@ signal switchMenu
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	EscMenu = load("res://EscMenu.tscn")
+	var config = ConfigFile.new()
+	config.save("user://settings.cfg") 
 
 func _process(delta):
 	pass
