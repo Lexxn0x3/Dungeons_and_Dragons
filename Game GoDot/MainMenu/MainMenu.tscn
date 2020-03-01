@@ -115,8 +115,27 @@ margin_top = -61.9688
 margin_right = 198.637
 margin_bottom = -19.9688
 text = "Fullscreen"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 957.633
+margin_top = 426.476
+margin_right = 1020.63
+margin_bottom = 446.476
+text = "connect"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 876.215
+margin_top = 423.892
+margin_right = 928.215
+margin_bottom = 443.892
+text = "create"
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Map" to="." method="_on_Map_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="CheckBox" to="." method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_connect_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_create_Button2_pressed"]

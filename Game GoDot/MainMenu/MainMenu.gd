@@ -49,3 +49,13 @@ func _on_CheckBox_pressed():
 
 func _on_Options_pressed():
 	get_parent()._instance_options()                                            #calls the funktion _instance_optons from the MainScene                           #gets value form the file and returns it
+
+
+func _on_create_Button2_pressed():
+	Network.create_server()
+	print(get_tree().get_network_unique_id())
+
+
+func _on_connect_Button_pressed():
+	Network.connect_to_server()
+	print(get_tree().get_network_unique_id())
