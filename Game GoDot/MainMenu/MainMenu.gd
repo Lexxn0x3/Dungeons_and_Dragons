@@ -59,3 +59,6 @@ func _on_create_Button2_pressed():
 func _on_connect_Button_pressed():
 	Network.connect_to_server()
 	print(get_tree().get_network_unique_id())
+
+func _on_Name_LineEdit_text_changed(new_text):
+	Network.my_info.name = new_text

@@ -33,7 +33,7 @@ func _player_connected(id):
 	rpc_id(id, "register_player", my_info)
 	print("player connected: ")
 	print(id)
-	print(player_info)
+	#print(player_info.size())
 
 func _player_disconnected(id):
 	player_info.erase(id) # Erase player from info.
@@ -52,5 +52,8 @@ remote func register_player(info):
 	var id = get_tree().get_rpc_sender_id()
 	# Store the info
 	player_info[id] = info
+	print(info)
+	
+	$'/root/Main/'.get_child(1).get_node("ItemList2").add_item(info["name"])
 
 	# Call function to update lobby UI here
