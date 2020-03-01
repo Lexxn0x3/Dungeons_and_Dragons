@@ -12,7 +12,7 @@ var mainMenu
 var EscMenu = load("res://EscMenu.tscn")
 var menu
 
-var playing = false
+var playing
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,6 +38,8 @@ func _input(ev):
 		playing = true
 		print("remove")
 		menu.queue_free()
+	else:
+		pass
 
 func _on_MainMenu_hitPlay():
 	player = playerScene.instance()
@@ -88,4 +90,4 @@ func _queue_free_player_map_escMenu_options():
 	player.queue_free()
 	menu.queue_free()
 	map.queue_free()
-	mainMenu.queue_free()
+	#mainMenu.queue_free()
