@@ -10,7 +10,7 @@ var Windowsize = OS.get_real_window_size()
 
 func _ready():
 	CC.rect_size = Vector2(Windowsize[0]/2-1,Windowsize[1])
-	Info.rect_size = Vector2(Windowsize[0]/2-1,Windowsize[1])
+	Info.rect_size = Vector2(OS.get_real_window_size()[0]-Windowsize[0]/2-2,Windowsize[1])
 	Info.rect_position = Vector2(Windowsize[0]/2+2,0)
 	Wall.rect_size = Vector2(2,Windowsize[1])
 	Wall.rect_position = Vector2(Windowsize[0]/2,0)
@@ -36,7 +36,7 @@ func _process(delta):
 		CC.rect_size = Vector2(mouse_x - 1, CC.rect_size[1])
 		Wall.rect_position = Vector2 (mouse_x, Wall.rect_position[1])
 		Info.rect_position = Vector2(mouse_x + 1, Info.rect_position[1])
-		Info.rect_size = Vector2(Windowsize[0]-Info.rect_position[0],Info.rect_size[1])
+		Info.rect_size = Vector2(OS.get_real_window_size()[0]-Info.rect_position[0],Info.rect_size[1])
 		Windowsize = OS.get_window_safe_area().size
 	
 	
