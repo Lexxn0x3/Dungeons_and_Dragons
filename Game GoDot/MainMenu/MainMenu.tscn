@@ -115,8 +115,61 @@ margin_top = -61.9688
 margin_right = 198.637
 margin_bottom = -19.9688
 text = "Fullscreen"
+
+[node name="Network" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Create" type="Button" parent="Network"]
+margin_left = -577.888
+margin_top = 535.238
+margin_right = -524.888
+margin_bottom = 555.238
+text = "Create"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Join" type="Button" parent="Network"]
+margin_left = -692.686
+margin_top = 534.458
+margin_right = -657.686
+margin_bottom = 554.458
+text = "Join"
+
+[node name="ItemList" type="ItemList" parent="Network"]
+margin_left = -695.0
+margin_top = 619.656
+margin_right = -527.0
+margin_bottom = 833.656
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Network"]
+margin_left = -694.0
+margin_top = 569.0
+margin_right = -526.0
+margin_bottom = 609.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartServer" type="Button" parent="Network"]
+margin_left = -689.0
+margin_top = 842.0
+margin_right = -529.0
+margin_bottom = 862.0
+text = "Start Server"
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Map" to="." method="_on_Map_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="CheckBox" to="." method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="Network/Create" to="." method="_on_Create_pressed"]
+[connection signal="pressed" from="Network/Join" to="." method="_on_Join_pressed"]
+[connection signal="pressed" from="Network/StartServer" to="." method="_on_StartServer_pressed"]
