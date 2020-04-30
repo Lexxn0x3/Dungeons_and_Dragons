@@ -20,16 +20,10 @@ func _ready():
 	var err = config.load("user://settings.cfg")                                #it dosent exist already
 	if err == 7:
 		config.save("user://settings.cfg") 
-		_set_ConfigFile("Graphics", "Fullscreen", true)
-		_set_ConfigFile("Audio", "MusicPlaying", true)
-	
 	_instance_MainMenu()
 	
-	#if _read_ConfigFile("Graphics", "Fullscreen") == true||false:
-	OS.window_fullscreen = _read_ConfigFile("Graphics", "Fullscreen")
-	#if _read_ConfigFile("Audio", "MusicPlaying") == true||false:
-	get_node("AudioStreamPlayer").set_stream_paused(!(_read_ConfigFile("Audio", "MusicPlaying")))
-
+	if _read_ConfigFile("Graphics", "Fullscreen") == true||false:
+		OS.window_fullscreen = _read_ConfigFile("Graphics", "Fullscreen")
 
 func _process(delta):
 	pass

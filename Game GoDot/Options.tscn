@@ -29,25 +29,4 @@ margin_bottom = 27.8066
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 819.856
-margin_top = 348.612
-margin_right = 885.856
-margin_bottom = 362.612
-text = "Music"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckButton" type="CheckButton" parent="Label2"]
-margin_left = 73.5844
-margin_top = -12.1934
-margin_right = 149.584
-margin_bottom = 27.8066
-pressed = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="toggled" from="Label/CheckButton" to="." method="_on_Fullscreen_CheckButton_toggled"]
-[connection signal="toggled" from="Label2/CheckButton" to="." method="_on_Music_CheckButton_toggled"]
