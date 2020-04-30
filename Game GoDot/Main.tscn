@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://music/SuspensefulUnderscoreMusic2019-01-31_-_A_World_In_Trouble_-_David_Fesliyan.wav" type="AudioStream" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=3]
 
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 1.0
+autoplay = true
