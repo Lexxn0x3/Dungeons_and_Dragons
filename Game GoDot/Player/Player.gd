@@ -3,7 +3,12 @@ extends KinematicBody2D
 # Player movement speed
 export var speed = 400
 
-func _physics_process(delta):
+func _enter_tree():
+	self.position.x = 500
+	self.position.y = 500
+	
+
+remotesync func _physics_process(delta):
 	# Get player input
 	var direction: Vector2
 	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -21,4 +26,4 @@ func _physics_process(delta):
 		speednew = speed
 	
 	var movement = speednew * direction * delta
-	move_and_collide(movement)
+	move_and_slide(movement)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://music/SuspensefulUnderscoreMusic2019-01-31_-_A_World_In_Trouble_-_David_Fesliyan.wav" type="AudioStream" id=1]
+[ext_resource path="res://Player/PlayerCamera.gd" type="Script" id=2]
 [ext_resource path="res://Main.gd" type="Script" id=3]
 
 [node name="Main" type="Node"]
@@ -10,3 +11,12 @@ script = ExtResource( 3 )
 stream = ExtResource( 1 )
 volume_db = 1.0
 autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 961.32, 536.044 )
+scale = Vector2( 0.498795, 0.498795 )
+current = true
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}

@@ -1,6 +1,6 @@
 extends Camera2D
 export var zoomSpeed = 1           #exported variables
-export var zoomDefault = 0.7
+export var zoomDefault = 1
 export var zoomMax = 4.1
 export var zoomMin = 0.1
 
