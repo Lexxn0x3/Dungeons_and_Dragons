@@ -11,6 +11,8 @@ var zoomValue = Vector2()
 func _ready():
 	zoomValue.x = zoomDefault #defaul zoom of the camera
 	zoomValue.y = zoomDefault
+	if get_parent().get_name() == "Player":
+		self.current = true
 
 func _physics_process(delta):
 	#get Inputs
