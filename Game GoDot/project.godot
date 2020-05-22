@@ -21,8 +21,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Resize_Window="res://Resize_Window.gd"
 Network="*res://Networking.gd"
+Variables="*res://Important_Variables.gd"
 
 [display]
 
