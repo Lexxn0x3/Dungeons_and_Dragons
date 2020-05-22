@@ -64,24 +64,24 @@ func _on_MainMenu_hitPlay():
 			options.queue_free()
 			optionsShown = false
 
-remotesync func _muliplayer_game():
-	var selfPeerID = get_tree().get_network_unique_id()
-	var level = mainMenu.get_selected_map()
-
-	# Load world
-	if level != PoolIntArray():
-		if level == PoolIntArray([0]):
-			mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
-		if level == PoolIntArray([1]):
-			mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
-		map = mapScene.instance()
-		add_child(map)
-		print("yeah")
-		# Load my player
-		var my_player = playerScene.instance()
-		my_player.set_name(str(selfPeerID))
-		my_player.set_network_master(selfPeerID) # Will be explained later
-		add_child(my_player)
+#remotesync func _muliplayer_game(mapArray):
+#	var selfPeerID = get_tree().get_network_unique_id()
+#	#var level = mainMenu.get_selected_map()
+#
+#	# Load world
+#	if mapArray != PoolIntArray():
+#		if mapArray == PoolIntArray([0]):
+#			mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
+#		if mapArray == PoolIntArray([1]):
+#			mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
+#		map = mapScene.instance()
+#		add_child(map)
+#		print("yeah")
+#		# Load my player
+#		var my_player = playerScene.instance()
+#		my_player.set_name(str(selfPeerID))
+#		my_player.set_network_master(selfPeerID) # Will be explained later
+#		add_child(my_player)
 
 		# Load other players
 		for p in Network.player_info:

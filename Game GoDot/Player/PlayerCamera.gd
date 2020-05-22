@@ -1,6 +1,6 @@
 extends Camera2D
 export var zoomSpeed = 1           #exported variables
-export var zoomDefault = 0.7
+export var zoomDefault = 1
 export var zoomMax = 4.1
 export var zoomMin = 0.1
 
@@ -11,6 +11,8 @@ var zoomValue = Vector2()
 func _ready():
 	zoomValue.x = zoomDefault #defaul zoom of the camera
 	zoomValue.y = zoomDefault
+	if get_parent().get_name() == "Player":
+		self.current = true
 
 func _physics_process(delta):
 	#get Inputs

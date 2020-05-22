@@ -1,7 +1,11 @@
 extends KinematicBody2D
 
 # Player movement speed
-export var speed = 400
+const speed = 10000
+
+func _enter_tree():
+	self.position.x = 500
+	self.position.y = 500
 
 func _physics_process(delta):
 	# Get player input
@@ -19,6 +23,6 @@ func _physics_process(delta):
 		speednew = speed/5
 	else:
 		speednew = speed
-	
+	#speed = 1000
 	var movement = speednew * direction * delta
-	move_and_collide(movement)
+	move_and_slide(movement)

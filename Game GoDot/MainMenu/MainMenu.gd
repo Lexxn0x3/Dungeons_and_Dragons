@@ -109,6 +109,7 @@ remote func register_player(info):
 	var id = get_tree().get_rpc_sender_id()
 	# Store the info
 	Network.player_info[id] = info
+	#print("player info...")
 	
 #	print(player_info[id])
 #	print(player_info.size())
@@ -120,9 +121,44 @@ func _updateUI():
 		get_node("Network/ItemList").add_item(Network.player_info[keys[i]])
 		#print(keys)
 
-
 func _on_StartServer_pressed():
-	var List = get_node("ItemList")
+	#var List = get_node("ItemList")
 	if get_tree().is_network_server() == true:
 		#get_parent()._muliplayer_game(List.get_item_text(List.get_selected_items()))
-		rpc_id(1, "_muliplayer_game")
+		var mapArray = $ItemList.get_selected_items()
+		var map
+		if mapArray != PoolIntArray():
+			if mapArray == PoolIntArray([0]):
+				map = 0
+			if mapArray == PoolIntArray([1]):
+				map = 1
+		#rset("mapIndex", map)
+		rpc("_muliplayer_game", 0)
+
+remotesync func _muliplayer_game(mapIndex):
+	var map
+	var mapScene
+	print(mapIndex)
+	if mapIndex == 0:
+		mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
+	if mapIndex == 1:
+		mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
+	
+	var selfPeerID = get_tree().get_network_unique_id()
+	#var level = mainMenu.get_selected_map()
+	#print("remote player game...")
+	# Load world
+	map = mapScene.instance()
+	get_parent().add_child(map)
+	# Load my player
+	var my_player = playerScene.instance()
+	my_player.set_name(str(selfPeerID))
+	my_player.set_network_master(selfPeerID)
+	get_parent().add_child(my_player)
+	for p in Network.player_info:
+		var player = preload("res://Player/Player.tscn").instance()
+		player.set_name(str(p))
+		player.set_network_master(p)
+		get_parent().add_child(player)
+		print(player)
+	self.queue_free()
