@@ -120,9 +120,9 @@ text = "Class"
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 35.0
-margin_top = 160.0
+margin_top = 170.0
 margin_right = -50.0
-margin_bottom = -50.0
+margin_bottom = -40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -131,6 +131,1150 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 25.0
+
+[node name="Ability Scores_Text" type="Label" parent="Background_Info/TabContainer/Stats"]
+anchor_right = 0.5
+margin_top = 20.0
+margin_bottom = 34.0
+rect_scale = Vector2( 2, 2 )
+text = "Ability Scores"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ability Scores" type="HBoxContainer" parent="Background_Info/TabContainer/Stats"]
+anchor_right = 1.0
+margin_left = 37.0
+margin_top = 60.0
+margin_right = -438.0
+margin_bottom = 74.0
+rect_scale = Vector2( 2, 2 )
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Strength" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores"]
+margin_right = 22.0
+margin_bottom = 14.0
+text = "STR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Strength"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "10"
+align = 1
+
+[node name="Modifire" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Strength/Score"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_right = 53.0
+margin_bottom = 16.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Mod"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stat" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Strength/Score/Modifire"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "+1"
+align = 1
+
+[node name="Dexterity" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores"]
+margin_left = 72.0
+margin_right = 97.0
+margin_bottom = 14.0
+text = "DEX"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Dexterity"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "10"
+align = 1
+
+[node name="Modifire" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Dexterity/Score"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_right = 53.0
+margin_bottom = 16.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Mod"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stat" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Dexterity/Score/Modifire"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "+1"
+align = 1
+
+[node name="Constitution" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores"]
+margin_left = 147.0
+margin_right = 176.0
+margin_bottom = 14.0
+text = "CON"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Constitution"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "10"
+align = 1
+
+[node name="Modifire" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Constitution/Score"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_right = 53.0
+margin_bottom = 16.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Mod"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stat" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Constitution/Score/Modifire"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "+1"
+align = 1
+
+[node name="Intelligence" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores"]
+margin_left = 226.0
+margin_right = 248.0
+margin_bottom = 14.0
+text = "INT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Intelligence"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "10"
+align = 1
+
+[node name="Modifire" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Intelligence/Score"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_right = 53.0
+margin_bottom = 16.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Mod"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stat" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Intelligence/Score/Modifire"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "+1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wisdom" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores"]
+margin_left = 298.0
+margin_right = 323.0
+margin_bottom = 14.0
+text = "WIS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Wisdom"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Modifire" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Wisdom/Score"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_right = 53.0
+margin_bottom = 16.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Mod"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stat" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Wisdom/Score/Modifire"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "+1"
+align = 1
+
+[node name="Charisma" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores"]
+margin_left = 373.0
+margin_right = 400.0
+margin_bottom = 14.0
+text = "CHA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Charisma"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "10"
+align = 1
+
+[node name="Modifire" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Charisma/Score"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_right = 53.0
+margin_bottom = 16.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Mod"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stat" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Charisma/Score/Modifire"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "+1"
+align = 1
+
+[node name="Proficiency Bonus" type="Label" parent="Background_Info/TabContainer/Stats"]
+margin_left = 172.0
+margin_top = 199.974
+margin_right = 286.0
+margin_bottom = 213.974
+rect_scale = Vector2( 2, 2 )
+text = "Proficiency Bonus"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Stats/Proficiency Bonus"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 16.0
+text = "0"
+align = 1
+
+[node name="Speed" type="Label" parent="Background_Info/TabContainer/Stats"]
+margin_left = 181.0
+margin_top = 314.276
+margin_right = 295.0
+margin_bottom = 328.276
+rect_scale = Vector2( 2, 2 )
+text = "Speed"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Stats/Speed"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 16.0
+text = "0"
+align = 1
+
+[node name="Darkvision" type="Label" parent="Background_Info/TabContainer/Stats"]
+margin_left = 489.0
+margin_top = 314.276
+margin_right = 603.0
+margin_bottom = 328.276
+rect_scale = Vector2( 2, 2 )
+text = "Darkvision"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Stats/Darkvision"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 16.0
+text = "0"
+align = 1
+
+[node name="Passive Perception" type="Label" parent="Background_Info/TabContainer/Stats"]
+margin_left = 489.0
+margin_top = 199.974
+margin_right = 603.0
+margin_bottom = 213.974
+rect_scale = Vector2( 2, 2 )
+text = "Passive Perception"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Stats/Passive Perception"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 16.0
+text = "0"
+align = 1
+
+[node name="Skills" type="ScrollContainer" parent="Background_Info/TabContainer/Stats"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 37.0
+margin_top = 395.0
+margin_right = -240.5
+margin_bottom = -238.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skills" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Skills"]
+margin_right = 148.0
+margin_bottom = 650.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Header" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills"]
+margin_right = 148.0
+margin_bottom = 14.0
+
+[node name="Profficiency" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Header"]
+margin_right = 25.0
+margin_bottom = 14.0
+text = "Prof"
+
+[node name="Skill" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Header"]
+margin_left = 29.0
+margin_right = 116.0
+margin_bottom = 14.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Skill"
+align = 1
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Header"]
+margin_left = 120.0
+margin_right = 148.0
+margin_bottom = 14.0
+text = "Mod"
+
+[node name="Skills" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills"]
+margin_top = 34.0
+margin_right = 148.0
+margin_bottom = 650.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+
+[node name="Acrobatics" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_right = 148.0
+margin_bottom = 24.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Acrobatics"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Acrobatics"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Acrobatics"
+align = 1
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Acrobatics"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Animal Handling" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 34.0
+margin_right = 148.0
+margin_bottom = 65.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Animal Handling"]
+margin_right = 24.0
+margin_bottom = 31.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Animal Handling"]
+margin_left = 28.0
+margin_right = 116.0
+margin_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Animal Handling"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Animal Handling"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 148.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Arcana" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 75.0
+margin_right = 148.0
+margin_bottom = 99.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Arcana"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Arcana"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Arcana"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Arcana"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Athletics" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 109.0
+margin_right = 148.0
+margin_bottom = 133.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Athletics"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Athletics"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Athletics"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Athletics"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Deception" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 143.0
+margin_right = 148.0
+margin_bottom = 167.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Deception"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Deception"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Deception"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Deception"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="History" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 177.0
+margin_right = 148.0
+margin_bottom = 201.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/History"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/History"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "History"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/History"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Insight" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 211.0
+margin_right = 148.0
+margin_bottom = 235.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Insight"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Insight"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Insight"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Insight"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Intimidation" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 245.0
+margin_right = 148.0
+margin_bottom = 269.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Intimidation"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Intimidation"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Intimidation"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Intimidation"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Investigation" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 279.0
+margin_right = 148.0
+margin_bottom = 303.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Investigation"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Investigation"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Investigation"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Investigation"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Medicine" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 313.0
+margin_right = 148.0
+margin_bottom = 337.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Medicine"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Medicine"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Medicine"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Medicine"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Nature" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 347.0
+margin_right = 148.0
+margin_bottom = 371.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Nature"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Nature"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Nature"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Nature"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Perception" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 381.0
+margin_right = 148.0
+margin_bottom = 405.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Perception"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Perception"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Perception"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Perception"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Performance" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 415.0
+margin_right = 148.0
+margin_bottom = 439.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Performance"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Performance"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Performance"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Performance"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Persuasion" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 449.0
+margin_right = 148.0
+margin_bottom = 473.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Persuasion"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Persuasion"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Persuasion"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Persuasion"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Religion" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 483.0
+margin_right = 148.0
+margin_bottom = 507.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Religion"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Religion"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Religion"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Religion"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Sleight of Hand" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 517.0
+margin_right = 148.0
+margin_bottom = 548.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Sleight of Hand"]
+margin_right = 24.0
+margin_bottom = 31.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Sleight of Hand"]
+margin_left = 28.0
+margin_right = 116.0
+margin_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Sleight of Hand"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Sleight of Hand"]
+margin_left = 120.0
+margin_top = 8.0
+margin_right = 148.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Stealth" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 558.0
+margin_right = 148.0
+margin_bottom = 582.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Stealth"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Stealth"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Stealth"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Stealth"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Survival" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
+margin_top = 592.0
+margin_right = 148.0
+margin_bottom = 616.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Survival"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Survival"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Survival"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Survival"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Saving Throws" type="ScrollContainer" parent="Background_Info/TabContainer/Stats"]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 104.5
+margin_top = 395.0
+margin_right = -185.0
+margin_bottom = -238.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Saving Throws" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws"]
+margin_right = 148.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+custom_constants/separation = 15
+
+[node name="Header" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws"]
+margin_right = 148.0
+margin_bottom = 14.0
+
+[node name="Profficiency" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Header"]
+margin_right = 25.0
+margin_bottom = 14.0
+text = "Prof"
+
+[node name="Ability" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Header"]
+margin_left = 29.0
+margin_right = 116.0
+margin_bottom = 14.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Ability"
+align = 1
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Header"]
+margin_left = 120.0
+margin_right = 148.0
+margin_bottom = 14.0
+text = "Mod"
+
+[node name="Skills" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws"]
+margin_top = 29.0
+margin_right = 148.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+
+[node name="Strength" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
+margin_right = 148.0
+margin_bottom = 24.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Strength"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Strength"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Strength"
+align = 1
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Strength"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Dexterity" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
+margin_top = 29.0
+margin_right = 148.0
+margin_bottom = 53.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Dexterity"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Dexterity"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Dexterity"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Dexterity"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Constitution" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
+margin_top = 58.0
+margin_right = 148.0
+margin_bottom = 82.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Constitution"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Constitution"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Constitution"
+align = 1
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Constitution"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Intelligence" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
+margin_top = 87.0
+margin_right = 148.0
+margin_bottom = 111.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Intelligence"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Intelligence"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Intelligence"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Intelligence"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Wisdom" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
+margin_top = 116.0
+margin_right = 148.0
+margin_bottom = 140.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Wisdom"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Wisdom"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Wisdom"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Wisdom"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
+
+[node name="Charisma" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
+margin_top = 145.0
+margin_right = 148.0
+margin_bottom = 169.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Charisma"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Charisma"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Charisma"
+align = 1
+autowrap = true
+
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Charisma"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 28, 0 )
+text = "0"
+align = 1
 
 [node name="Combat" type="Panel" parent="Background_Info/TabContainer"]
 visible = false
