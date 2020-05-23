@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Character Creafion (Final)/UI_Caracter_Creation.gd" type="Script" id=1]
+[ext_resource path="res://Import Images/Eye.png" type="Texture" id=2]
+[ext_resource path="res://Import Images/Eye_closed.png" type="Texture" id=3]
+[ext_resource path="res://Character Creafion (Final)/Hide_without_Prof.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.145098, 0.145098, 0.164706, 1 )
@@ -9,6 +12,12 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0.184314, 0.184314, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.87451, 0.0784314, 0.0784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.184314, 0.184314, 0.223529, 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -128,9 +137,13 @@ __meta__ = {
 }
 
 [node name="Stats" type="Panel" parent="Background_Info/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 25.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 
 [node name="Ability Scores_Text" type="Label" parent="Background_Info/TabContainer/Stats"]
 anchor_right = 0.5
@@ -464,57 +477,62 @@ margin_bottom = 16.0
 text = "0"
 align = 1
 
-[node name="Skills" type="ScrollContainer" parent="Background_Info/TabContainer/Stats"]
-anchor_right = 0.5
-anchor_bottom = 1.0
+[node name="Header_Skills" type="HBoxContainer" parent="Background_Info/TabContainer/Stats"]
 margin_left = 37.0
 margin_top = 395.0
-margin_right = -240.5
-margin_bottom = -238.0
+margin_right = 181.0
+margin_bottom = 409.0
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Skills" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Skills"]
-margin_right = 148.0
-margin_bottom = 650.0
-size_flags_horizontal = 3
-custom_constants/separation = 20
-
-[node name="Header" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills"]
-margin_right = 148.0
-margin_bottom = 14.0
-
-[node name="Profficiency" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Header"]
+[node name="Profficiency" type="Label" parent="Background_Info/TabContainer/Stats/Header_Skills"]
 margin_right = 25.0
 margin_bottom = 14.0
 text = "Prof"
 
-[node name="Skill" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Header"]
+[node name="Skill" type="Label" parent="Background_Info/TabContainer/Stats/Header_Skills"]
 margin_left = 29.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 14.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 text = "Skill"
 align = 1
 
-[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Header"]
-margin_left = 120.0
-margin_right = 148.0
+[node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Header_Skills"]
+margin_left = 116.0
+margin_right = 144.0
 margin_bottom = 14.0
 text = "Mod"
 
+[node name="Skills" type="ScrollContainer" parent="Background_Info/TabContainer/Stats"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 37.0
+margin_top = 433.0
+margin_right = -240.5
+margin_bottom = -219.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skills" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Skills"]
+margin_right = 156.0
+margin_bottom = 616.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
 [node name="Skills" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills"]
-margin_top = 34.0
-margin_right = 148.0
-margin_bottom = 650.0
+margin_right = 144.0
+margin_bottom = 616.0
 size_flags_horizontal = 3
 custom_constants/separation = 10
 
 [node name="Acrobatics" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 24.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Acrobatics"]
@@ -525,7 +543,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Acrobatics"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -533,9 +551,9 @@ text = "Acrobatics"
 align = 1
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Acrobatics"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -543,7 +561,7 @@ align = 1
 
 [node name="Animal Handling" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 34.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 65.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Animal Handling"]
@@ -553,7 +571,7 @@ disabled = true
 
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Animal Handling"]
 margin_left = 28.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 31.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -562,9 +580,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Animal Handling"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 8.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -572,7 +590,7 @@ align = 1
 
 [node name="Arcana" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 75.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 99.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Arcana"]
@@ -583,7 +601,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Arcana"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -592,9 +610,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Arcana"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -602,7 +620,7 @@ align = 1
 
 [node name="Athletics" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 109.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 133.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Athletics"]
@@ -613,7 +631,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Athletics"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -622,9 +640,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Athletics"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -632,7 +650,7 @@ align = 1
 
 [node name="Deception" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 143.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 167.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Deception"]
@@ -643,7 +661,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Deception"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -652,9 +670,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Deception"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -662,7 +680,7 @@ align = 1
 
 [node name="History" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 177.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 201.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/History"]
@@ -673,7 +691,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/History"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -682,9 +700,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/History"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -692,7 +710,7 @@ align = 1
 
 [node name="Insight" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 211.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 235.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Insight"]
@@ -703,7 +721,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Insight"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -712,9 +730,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Insight"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -722,7 +740,7 @@ align = 1
 
 [node name="Intimidation" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 245.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 269.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Intimidation"]
@@ -733,7 +751,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Intimidation"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -742,9 +760,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Intimidation"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -752,7 +770,7 @@ align = 1
 
 [node name="Investigation" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 279.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 303.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Investigation"]
@@ -763,7 +781,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Investigation"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -772,9 +790,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Investigation"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -782,7 +800,7 @@ align = 1
 
 [node name="Medicine" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 313.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 337.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Medicine"]
@@ -793,7 +811,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Medicine"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -802,9 +820,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Medicine"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -812,7 +830,7 @@ align = 1
 
 [node name="Nature" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 347.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 371.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Nature"]
@@ -823,7 +841,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Nature"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -832,9 +850,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Nature"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -842,7 +860,7 @@ align = 1
 
 [node name="Perception" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 381.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 405.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Perception"]
@@ -853,7 +871,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Perception"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -862,9 +880,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Perception"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -872,7 +890,7 @@ align = 1
 
 [node name="Performance" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 415.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 439.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Performance"]
@@ -883,7 +901,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Performance"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -892,9 +910,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Performance"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -902,7 +920,7 @@ align = 1
 
 [node name="Persuasion" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 449.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 473.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Persuasion"]
@@ -913,7 +931,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Persuasion"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -922,9 +940,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Persuasion"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -932,7 +950,7 @@ align = 1
 
 [node name="Religion" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 483.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 507.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Religion"]
@@ -943,7 +961,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Religion"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -952,9 +970,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Religion"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -962,7 +980,7 @@ align = 1
 
 [node name="Sleight of Hand" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 517.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 548.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Sleight of Hand"]
@@ -972,7 +990,7 @@ disabled = true
 
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Sleight of Hand"]
 margin_left = 28.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 31.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -981,9 +999,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Sleight of Hand"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 8.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -991,7 +1009,7 @@ align = 1
 
 [node name="Stealth" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 558.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 582.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Stealth"]
@@ -1002,7 +1020,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Stealth"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1011,9 +1029,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Stealth"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1021,7 +1039,7 @@ align = 1
 
 [node name="Survival" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 592.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 616.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Survival"]
@@ -1032,7 +1050,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Survival"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1041,9 +1059,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Survival"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1063,13 +1081,13 @@ __meta__ = {
 }
 
 [node name="Saving Throws" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws"]
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 198.0
 size_flags_horizontal = 3
 custom_constants/separation = 15
 
 [node name="Header" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws"]
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 14.0
 
 [node name="Profficiency" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Header"]
@@ -1079,7 +1097,7 @@ text = "Prof"
 
 [node name="Ability" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Header"]
 margin_left = 29.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 14.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1087,20 +1105,20 @@ text = "Ability"
 align = 1
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Header"]
-margin_left = 120.0
-margin_right = 148.0
+margin_left = 116.0
+margin_right = 144.0
 margin_bottom = 14.0
 text = "Mod"
 
 [node name="Skills" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws"]
 margin_top = 29.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 198.0
 size_flags_horizontal = 3
 custom_constants/separation = 5
 
 [node name="Strength" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 24.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Strength"]
@@ -1111,7 +1129,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Strength"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1119,9 +1137,9 @@ text = "Strength"
 align = 1
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Strength"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1129,7 +1147,7 @@ align = 1
 
 [node name="Dexterity" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
 margin_top = 29.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 53.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Dexterity"]
@@ -1140,7 +1158,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Dexterity"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1149,9 +1167,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Dexterity"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1159,7 +1177,7 @@ align = 1
 
 [node name="Constitution" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
 margin_top = 58.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 82.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Constitution"]
@@ -1170,7 +1188,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Constitution"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1178,9 +1196,9 @@ text = "Constitution"
 align = 1
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Constitution"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1188,7 +1206,7 @@ align = 1
 
 [node name="Intelligence" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
 margin_top = 87.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 111.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Intelligence"]
@@ -1199,7 +1217,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Intelligence"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1208,9 +1226,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Intelligence"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1218,7 +1236,7 @@ align = 1
 
 [node name="Wisdom" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
 margin_top = 116.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 140.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Wisdom"]
@@ -1229,7 +1247,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Wisdom"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1238,9 +1256,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Wisdom"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1248,7 +1266,7 @@ align = 1
 
 [node name="Charisma" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
 margin_top = 145.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 169.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Charisma"]
@@ -1259,7 +1277,7 @@ disabled = true
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Charisma"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 116.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1268,9 +1286,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Charisma"]
-margin_left = 120.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 148.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1285,8 +1303,1059 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 
+[node name="Livebar" type="Label" parent="Background_Info/TabContainer/Combat"]
+margin_left = 50.0
+margin_top = 33.9708
+margin_right = 433.0
+margin_bottom = 47.9708
+rect_scale = Vector2( 2, 2 )
+text = "Livebar"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Live-Bar" type="ProgressBar" parent="Background_Info/TabContainer/Combat/Livebar"]
+anchor_right = 1.0
+margin_top = 14.0
+margin_bottom = 31.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Live" type="Label" parent="Background_Info/TabContainer/Combat/Livebar/Live-Bar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 3.0
+text = "0/0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Initiative" type="Label" parent="Background_Info/TabContainer/Combat"]
+margin_left = 542.0
+margin_top = 134.0
+margin_right = 599.0
+margin_bottom = 148.0
+rect_scale = Vector2( 2, 2 )
+text = "Initiative"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Combat/Initiative"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "+2"
+align = 1
+
+[node name="Armor Class" type="Label" parent="Background_Info/TabContainer/Combat"]
+margin_left = 181.0
+margin_top = 134.0
+margin_right = 258.0
+margin_bottom = 148.0
+rect_scale = Vector2( 2, 2 )
+text = "Armor Class"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Background_Info/TabContainer/Combat/Armor Class"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 14.0
+text = "16"
+align = 1
+
+[node name="Profs" type="Label" parent="Background_Info/TabContainer/Combat"]
+anchor_right = 1.0
+margin_top = 227.974
+margin_right = -433.0
+margin_bottom = 241.974
+rect_scale = Vector2( 2, 2 )
+text = "Proficiencies"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Armor" type="ScrollContainer" parent="Background_Info/TabContainer/Combat"]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 104.5
+margin_top = 395.0
+margin_right = -185.0
+margin_bottom = -238.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Armor" type="VBoxContainer" parent="Background_Info/TabContainer/Combat/Armor"]
+margin_right = 144.0
+margin_bottom = 140.0
+size_flags_horizontal = 3
+custom_constants/separation = 15
+
+[node name="Header" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Armor/Armor"]
+margin_right = 144.0
+margin_bottom = 14.0
+
+[node name="Profficiency" type="Label" parent="Background_Info/TabContainer/Combat/Armor/Armor/Header"]
+margin_right = 25.0
+margin_bottom = 14.0
+text = "Prof"
+
+[node name="Armor Type" type="Label" parent="Background_Info/TabContainer/Combat/Armor/Armor/Header"]
+margin_left = 29.0
+margin_right = 144.0
+margin_bottom = 14.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Armor Type"
+align = 1
+
+[node name="Armor" type="VBoxContainer" parent="Background_Info/TabContainer/Combat/Armor/Armor"]
+margin_top = 29.0
+margin_right = 144.0
+margin_bottom = 140.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+
+[node name="Light Armor" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor"]
+margin_right = 144.0
+margin_bottom = 24.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor/Light Armor"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor/Light Armor"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 144.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Light Armor"
+align = 1
+
+[node name="Medium Armor" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor"]
+margin_top = 29.0
+margin_right = 144.0
+margin_bottom = 53.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor/Medium Armor"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor/Medium Armor"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 144.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Medium Armor"
+align = 1
+autowrap = true
+
+[node name="Heavy Armor" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor"]
+margin_top = 58.0
+margin_right = 144.0
+margin_bottom = 82.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor/Heavy Armor"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor/Heavy Armor"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 144.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Heavy Armor"
+align = 1
+
+[node name="Shield" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor"]
+margin_top = 87.0
+margin_right = 144.0
+margin_bottom = 111.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor/Shield"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Armor/Armor/Armor/Shield"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 144.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Shield"
+align = 1
+
+[node name="Weapons" type="ScrollContainer" parent="Background_Info/TabContainer/Combat"]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -352.5
+margin_top = 374.0
+margin_right = -622.0
+margin_bottom = -259.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weapons" type="VBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons"]
+margin_right = 164.0
+margin_bottom = 1174.0
+size_flags_horizontal = 3
+custom_constants/separation = 15
+
+[node name="Header" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons"]
+margin_right = 152.0
+margin_bottom = 14.0
+
+[node name="Profficiency" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Header"]
+margin_right = 25.0
+margin_bottom = 14.0
+text = "Prof"
+
+[node name="Weapon Type" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Header"]
+margin_left = 29.0
+margin_right = 132.0
+margin_bottom = 14.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Weapon"
+align = 1
+
+[node name="Hide" type="TextureButton" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Header"]
+margin_left = 136.0
+margin_right = 152.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 16, 10 )
+toggle_mode = true
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+
+[node name="Weapons" type="VBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons"]
+margin_top = 29.0
+margin_right = 152.0
+margin_bottom = 1174.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+script = ExtResource( 4 )
+
+[node name="Simple meele" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_right = 152.0
+margin_bottom = 14.0
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Simple meele"]
+margin_right = 152.0
+margin_bottom = 14.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Simple meele weapons"
+align = 1
+
+[node name="Club" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 19.0
+margin_right = 152.0
+margin_bottom = 43.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Club"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Club"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Club"
+align = 1
+autowrap = true
+
+[node name="Dagger" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 48.0
+margin_right = 152.0
+margin_bottom = 72.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Dagger"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Dagger"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Dagger"
+align = 1
+
+[node name="Greatclub" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 77.0
+margin_right = 152.0
+margin_bottom = 101.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Greatclub"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Greatclub"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Greatclub"
+align = 1
+
+[node name="Handaxe" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 106.0
+margin_right = 152.0
+margin_bottom = 130.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Handaxe"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Handaxe"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Handaxe"
+align = 1
+
+[node name="Javelin" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 135.0
+margin_right = 152.0
+margin_bottom = 159.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Javelin"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Javelin"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Javelin"
+align = 1
+
+[node name="Light_Hammer" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 164.0
+margin_right = 152.0
+margin_bottom = 188.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Light_Hammer"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Light_Hammer"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Light Hammer"
+align = 1
+
+[node name="Mace" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 193.0
+margin_right = 152.0
+margin_bottom = 217.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Mace"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Mace"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Mace"
+align = 1
+
+[node name="Quaterstaff" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 222.0
+margin_right = 152.0
+margin_bottom = 246.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Quaterstaff"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Quaterstaff"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Quaterstaff"
+align = 1
+
+[node name="Sickle" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 251.0
+margin_right = 152.0
+margin_bottom = 275.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Sickle"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Sickle"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Sickle"
+align = 1
+
+[node name="Spear" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 280.0
+margin_right = 152.0
+margin_bottom = 304.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Spear"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Spear"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Spear"
+align = 1
+
+[node name="Space" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 309.0
+margin_right = 152.0
+margin_bottom = 314.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Simple ranged weapons" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 319.0
+margin_right = 152.0
+margin_bottom = 333.0
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Simple ranged weapons"]
+margin_right = 152.0
+margin_bottom = 14.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Simple ranged weapons"
+align = 1
+
+[node name="Crossbow_light" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 338.0
+margin_right = 152.0
+margin_bottom = 362.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Crossbow_light"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Crossbow_light"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Light Crossbow"
+align = 1
+
+[node name="Dart" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 367.0
+margin_right = 152.0
+margin_bottom = 391.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Dart"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Dart"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Dart"
+align = 1
+
+[node name="Shortbow" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 396.0
+margin_right = 152.0
+margin_bottom = 420.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Shortbow"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Shortbow"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Shortbow"
+align = 1
+
+[node name="Sling" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 425.0
+margin_right = 152.0
+margin_bottom = 449.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Sling"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Sling"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Sling"
+align = 1
+
+[node name="Space2" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 454.0
+margin_right = 152.0
+margin_bottom = 459.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Martial Melee" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 464.0
+margin_right = 152.0
+margin_bottom = 478.0
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Martial Melee"]
+margin_right = 152.0
+margin_bottom = 14.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Martial melee weapons"
+align = 1
+
+[node name="Battleaxe" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 483.0
+margin_right = 152.0
+margin_bottom = 507.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Battleaxe"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Battleaxe"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Battleaxe"
+align = 1
+
+[node name="Flail" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 512.0
+margin_right = 152.0
+margin_bottom = 536.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Flail"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Flail"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Flail"
+align = 1
+
+[node name="Glaive" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 541.0
+margin_right = 152.0
+margin_bottom = 565.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Glaive"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Glaive"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Glaive"
+align = 1
+
+[node name="Greataxe" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 570.0
+margin_right = 152.0
+margin_bottom = 594.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Greataxe"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Greataxe"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Greataxe"
+align = 1
+
+[node name="Greatsword" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 599.0
+margin_right = 152.0
+margin_bottom = 623.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Greatsword"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Greatsword"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Greatsword"
+align = 1
+
+[node name="Halberd" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 628.0
+margin_right = 152.0
+margin_bottom = 652.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Halberd"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Halberd"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Halberd"
+align = 1
+
+[node name="Lance" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 657.0
+margin_right = 152.0
+margin_bottom = 681.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Lance"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Lance"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Lance"
+align = 1
+
+[node name="Longsword" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 686.0
+margin_right = 152.0
+margin_bottom = 710.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Longsword"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Longsword"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Longsword"
+align = 1
+
+[node name="Maul" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 715.0
+margin_right = 152.0
+margin_bottom = 739.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Maul"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Maul"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Maul"
+align = 1
+
+[node name="Morningstar" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 744.0
+margin_right = 152.0
+margin_bottom = 768.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Morningstar"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Morningstar"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Morningstar"
+align = 1
+
+[node name="Pike" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 773.0
+margin_right = 152.0
+margin_bottom = 797.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Pike"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Pike"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Pike"
+align = 1
+
+[node name="Rapier" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 802.0
+margin_right = 152.0
+margin_bottom = 826.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Rapier"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Rapier"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Rapier"
+align = 1
+
+[node name="Scimitar" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 831.0
+margin_right = 152.0
+margin_bottom = 855.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Scimitar"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Scimitar"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Scimitar"
+align = 1
+
+[node name="Shortsword" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 860.0
+margin_right = 152.0
+margin_bottom = 884.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Shortsword"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Shortsword"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Shortsword"
+align = 1
+
+[node name="War_pick" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 889.0
+margin_right = 152.0
+margin_bottom = 913.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/War_pick"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/War_pick"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "War pick"
+align = 1
+
+[node name="Warhammer" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 918.0
+margin_right = 152.0
+margin_bottom = 942.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Warhammer"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Warhammer"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Warhammer"
+align = 1
+
+[node name="Whip" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 947.0
+margin_right = 152.0
+margin_bottom = 971.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Whip"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Whip"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Whip"
+align = 1
+
+[node name="Space3" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 976.0
+margin_right = 152.0
+margin_bottom = 981.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Martial Ranged" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 986.0
+margin_right = 152.0
+margin_bottom = 1000.0
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Martial Ranged"]
+margin_right = 152.0
+margin_bottom = 14.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Martial ranged weapons"
+align = 1
+
+[node name="Blowgun" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 1005.0
+margin_right = 152.0
+margin_bottom = 1029.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Blowgun"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Blowgun"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Blowgun"
+align = 1
+
+[node name="Crossbow_Hand" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 1034.0
+margin_right = 152.0
+margin_bottom = 1058.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Crossbow_Hand"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Crossbow_Hand"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Hand Crossbow"
+align = 1
+
+[node name="Crossbow_Heavy" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 1063.0
+margin_right = 152.0
+margin_bottom = 1087.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Crossbow_Heavy"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Crossbow_Heavy"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Heavy Crossbow"
+align = 1
+
+[node name="Longbow" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 1092.0
+margin_right = 152.0
+margin_bottom = 1116.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Longbow"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Longbow"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Longbow"
+align = 1
+
+[node name="Net" type="HBoxContainer" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons"]
+margin_top = 1121.0
+margin_right = 152.0
+margin_bottom = 1145.0
+
+[node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Net"]
+margin_right = 24.0
+margin_bottom = 24.0
+disabled = true
+
+[node name="Name" type="Label" parent="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons/Net"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 152.0
+margin_bottom = 19.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Net"
+align = 1
+
 [node name="Spells" type="Panel" parent="Background_Info/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -1329,3 +2398,4 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
+[connection signal="pressed" from="Background_Info/TabContainer/Combat/Weapons/Weapons/Header/Hide" to="Background_Info/TabContainer/Combat/Weapons/Weapons/Weapons" method="_on_Hide_pressed"]

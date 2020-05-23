@@ -94,3 +94,4 @@ func XP_next_level(Level):
 		return 355000
 	else:
 		return 0
+
