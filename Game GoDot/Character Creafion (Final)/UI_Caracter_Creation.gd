@@ -31,7 +31,6 @@ func _process(delta):
 	$"Background_Info/Basic_Infos/Name".text = str(Name)
 	
 	#Classes
-	
 	pass
 
 
