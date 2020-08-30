@@ -1,7 +1,7 @@
 extends Node
 var mapScene
 var map
-var playerScene = load("res://Player/Player.tscn")
+var playerScene = preload("res://Player/Player.tscn")
 var player
 var optionsShown = false
 var optionsScene = load("res://Options.tscn")
@@ -48,7 +48,9 @@ func _input(ev):
 		pass
 
 func _on_MainMenu_hitPlay():
+	var selfPeerID = get_tree().get_network_unique_id()
 	player = playerScene.instance()
+	player.set_network_master(selfPeerID)
 	var item = mainMenu.get_selected_map()
 	if item != PoolIntArray():
 		if item == PoolIntArray([0]):
@@ -63,37 +65,44 @@ func _on_MainMenu_hitPlay():
 		if optionsShown == true:
 			options.queue_free()
 			optionsShown = false
-
-#remotesync func _muliplayer_game(mapArray):
-#	var selfPeerID = get_tree().get_network_unique_id()
-#	#var level = mainMenu.get_selected_map()
-#
-#	# Load world
-#	if mapArray != PoolIntArray():
-#		if mapArray == PoolIntArray([0]):
-#			mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
-#		if mapArray == PoolIntArray([1]):
-#			mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
-#		map = mapScene.instance()
-#		add_child(map)
-#		print("yeah")
-#		# Load my player
-#		var my_player = playerScene.instance()
-#		my_player.set_name(str(selfPeerID))
-#		my_player.set_network_master(selfPeerID) # Will be explained later
-#		add_child(my_player)
-
-		# Load other players
-		for p in Network.player_info:
-			var player = playerScene.instance()
-			player.set_name(str(p))
-			player.set_network_master(p) # Will be explained later
-			add_child(player)
 			mainMenu.queue_free()
 		playing = true
 		if optionsShown == true:
 			options.queue_free()
 			optionsShown = false
+
+func _on_Server_hitPlay(map):
+	var selfPeerID = get_tree().get_network_unique_id()
+	var player = preload("res://Player/Player.tscn").instance()
+	player.set_name(str(selfPeerID))
+	player.set_network_master(selfPeerID)
+	print(player)
+	add_child(player)
+	if map != PoolIntArray():
+		if map == PoolIntArray([0]):
+			mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
+		if map == PoolIntArray([1]):
+			mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
+		map = mapScene.instance()
+		add_child(map)
+		mainMenu.queue_free()
+		playing = true
+		if optionsShown == true:
+			options.queue_free()
+			optionsShown = false
+			mainMenu.queue_free()
+		playing = true
+		if optionsShown == true:
+			options.queue_free()
+			optionsShown = false
+			
+	#other players
+	for p in Network.player_info:
+		player = preload("res://Player/Player.tscn").instance()
+		player.set_name(str(p))
+		player.set_network_master(p)
+		print(player)
+		add_child(player)
 
 func _instance_options():
 	if optionsShown == false:
@@ -128,3 +137,12 @@ func _queue_free_player_map_escMenu_options():
 	menu.queue_free()
 	map.queue_free()
 	#mainMenu.queue_free()
+
+#networking disconnecting
+func _on_player_disconnected(id):
+	get_node(str(id)).queue_free()
+
+func _on_server_disconnected():
+	pass
+	#return to default Main Menu
+	#should be done soon

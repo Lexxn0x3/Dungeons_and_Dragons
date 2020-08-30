@@ -165,6 +165,9 @@ margin_top = 842.0
 margin_right = -529.0
 margin_bottom = 862.0
 text = "Start Server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Map" to="." method="_on_Map_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
