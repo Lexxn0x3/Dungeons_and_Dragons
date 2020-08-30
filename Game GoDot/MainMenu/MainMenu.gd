@@ -2,6 +2,7 @@ extends Control
 #signal hitPlay
 
 onready var itemList = get_node("ItemList")
+onready var networkNodes = get_node("Network")
 var optionsShown = false
 var optionsScene = load("res://Options.tscn")
 var options
@@ -11,7 +12,6 @@ var playerScene = load("res://Player/Player.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	itemList.hide()
-	$CheckBox.hide()
 
 # warning-ignore:unused_argument
 func _process(delta):
@@ -58,14 +58,14 @@ func _updatePlayerList():
 
 
 func _on_Join_pressed():
-	var playerName = get_node("Network/TextEdit").text
+	var playerName = get_node("Network/VBoxContainer/TextEdit").text
 	if playerName == "":
 		return
 	Network.connect_to_server(playerName)
 
 
 func _on_Create_pressed():
-	var playerName = get_node("Network/TextEdit").text
+	var playerName = get_node("Network/VBoxContainer/TextEdit").text
 	if playerName == "":
 		return
 	Network.create_server(playerName)
@@ -76,3 +76,9 @@ func _on_StartServer_pressed():
 
 remotesync func StartServer(map):
 	get_parent()._on_Server_hitPlay(map)
+
+func _on_StartMuliplayer_pressed():
+	if networkNodes.is_visible_in_tree():
+		networkNodes.hide()
+	else:
+		networkNodes.show()

@@ -29,7 +29,6 @@ func _physics_process(delta):
 		#speed = 1000
 		var movement = speednew * direction * delta
 		move_and_slide(movement)
-		print(self.position)
 		rset_unreliable("slave_position", self.position)
 	else:
 		self.position = slave_position

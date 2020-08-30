@@ -1,16 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://MainMenu/LiberationSans-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 0 )
 
-[sub_resource type="DynamicFontData" id=2]
-font_path = "res://MainMenu/FunSized.ttf"
-
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 45
-font_data = SubResource( 2 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+
+[sub_resource type="StyleBoxFlat" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 0 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -25,6 +38,8 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -4.0
+margin_bottom = -4.0
 custom_constants/margin_right = 120
 custom_constants/margin_top = 80
 custom_constants/margin_left = 120
@@ -40,64 +55,94 @@ margin_right = 1800.0
 margin_bottom = 1000.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_right = 223.0
+margin_right = 353.0
 margin_bottom = 920.0
+size_flags_vertical = 3
 alignment = 1
 
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_right = 223.0
-margin_bottom = 227.0
-size_flags_vertical = 3
+margin_top = 324.0
+margin_right = 231.0
+margin_bottom = 375.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Start"
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.694118, 0.694118, 0.694118, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.501961, 0.501961, 1 )
+text = "Start Game"
+flat = true
+
+[node name="StartMuliplayer" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 379.0
+margin_right = 353.0
+margin_bottom = 430.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.694118, 0.694118, 0.694118, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.501961, 0.501961, 1 )
+text = "Multiplayer Game"
+flat = true
 
 [node name="Map" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 231.0
-margin_right = 223.0
-margin_bottom = 458.0
-size_flags_vertical = 3
+margin_top = 434.0
+margin_right = 286.0
+margin_bottom = 485.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Map"
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.694118, 0.694118, 0.694118, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.501961, 0.501961, 1 )
+text = "Map Selection"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 462.0
-margin_right = 223.0
-margin_bottom = 689.0
-size_flags_vertical = 3
+margin_top = 489.0
+margin_right = 156.0
+margin_bottom = 540.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.694118, 0.694118, 0.694118, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "Options"
+flat = true
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 693.0
-margin_right = 223.0
-margin_bottom = 920.0
-size_flags_vertical = 3
+margin_top = 544.0
+margin_right = 218.0
+margin_bottom = 595.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Quit"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 227.0
-margin_right = 227.0
-margin_bottom = 920.0
-alignment = 1
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.694118, 0.694118, 0.694118, 1 )
+custom_colors/font_color_pressed = Color( 0.501961, 0.501961, 0.501961, 1 )
+text = "Quit Game"
+flat = true
 
 [node name="ItemList" type="ItemList" parent="."]
 anchor_left = 0.197
 anchor_top = 0.5
 anchor_right = 0.197
 anchor_bottom = 0.5
-margin_left = 10.2845
-margin_top = -455.456
-margin_right = 389.285
-margin_bottom = 464.544
-size_flags_vertical = 3
+margin_left = 189.403
+margin_top = -21.0466
+margin_right = 568.403
+margin_bottom = 161.953
+size_flags_horizontal = 12
+size_flags_vertical = 12
+custom_styles/bg_focus = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 items = [ "The Dark Pit of Gothmog of Udun", null, false, "The Warrens of Tenebrous Death", null, false ]
 max_columns = 5
 same_column_width = true
@@ -105,74 +150,93 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBox" type="CheckBox" parent="."]
-anchor_left = 0.206
-anchor_top = 0.519
-anchor_right = 0.206
-anchor_bottom = 0.519
-margin_left = 6.63715
-margin_top = -61.9688
-margin_right = 198.637
-margin_bottom = -19.9688
-text = "Fullscreen"
-
 [node name="Network" type="Control" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -138.823
+margin_top = -149.502
+margin_right = -138.823
+margin_bottom = -149.502
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Create" type="Button" parent="Network"]
-margin_left = -577.888
-margin_top = 535.238
-margin_right = -524.888
-margin_bottom = 555.238
+[node name="VBoxContainer" type="VBoxContainer" parent="Network"]
+margin_left = -412.0
+margin_top = 613.0
+margin_right = -183.0
+margin_bottom = 721.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Network/VBoxContainer"]
+margin_right = 229.0
+margin_bottom = 25.0
+size_flags_vertical = 11
+size_flags_stretch_ratio = 0.05
+custom_colors/caret_background_color = Color( 0, 0, 0, 0 )
+custom_colors/background_color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Network/VBoxContainer"]
+margin_top = 29.0
+margin_right = 229.0
+margin_bottom = 79.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Create" type="Button" parent="Network/VBoxContainer/HBoxContainer"]
+margin_right = 112.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 5 )
 text = "Create"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Join" type="Button" parent="Network"]
-margin_left = -692.686
-margin_top = 534.458
-margin_right = -657.686
-margin_bottom = 554.458
+[node name="Join" type="Button" parent="Network/VBoxContainer/HBoxContainer"]
+margin_left = 116.0
+margin_right = 229.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 6 )
 text = "Join"
 
-[node name="ItemList" type="ItemList" parent="Network"]
-margin_left = -695.0
-margin_top = 619.656
-margin_right = -527.0
-margin_bottom = 833.656
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextEdit" type="TextEdit" parent="Network"]
-margin_left = -694.0
-margin_top = 569.0
-margin_right = -526.0
-margin_bottom = 609.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="StartServer" type="Button" parent="Network"]
-margin_left = -689.0
-margin_top = 842.0
-margin_right = -529.0
-margin_bottom = 862.0
+[node name="StartServer" type="Button" parent="Network/VBoxContainer"]
+margin_top = 83.0
+margin_right = 229.0
+margin_bottom = 108.0
+size_flags_vertical = 11
+size_flags_stretch_ratio = 0.05
+custom_styles/normal = SubResource( 7 )
 text = "Start Server"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ItemList" type="ItemList" parent="Network"]
+margin_left = -412.0
+margin_top = 723.691
+margin_right = -183.0
+margin_bottom = 732.691
+custom_styles/bg = SubResource( 8 )
+auto_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartMuliplayer" to="." method="_on_StartMuliplayer_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Map" to="." method="_on_Map_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="pressed" from="CheckBox" to="." method="_on_CheckBox_pressed"]
-[connection signal="pressed" from="Network/Create" to="." method="_on_Create_pressed"]
-[connection signal="pressed" from="Network/Join" to="." method="_on_Join_pressed"]
-[connection signal="pressed" from="Network/StartServer" to="." method="_on_StartServer_pressed"]
+[connection signal="pressed" from="Network/VBoxContainer/HBoxContainer/Create" to="." method="_on_Create_pressed"]
+[connection signal="pressed" from="Network/VBoxContainer/HBoxContainer/Join" to="." method="_on_Join_pressed"]
+[connection signal="pressed" from="Network/VBoxContainer/StartServer" to="." method="_on_StartServer_pressed"]

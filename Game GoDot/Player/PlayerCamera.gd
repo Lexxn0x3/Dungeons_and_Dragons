@@ -13,6 +13,8 @@ func _ready():
 	zoomValue.y = zoomDefault
 	if get_parent().get_name() == "Player":
 		self.current = true
+	if is_network_master():
+		self.current = true
 
 func _physics_process(delta):
 	#get Inputs
