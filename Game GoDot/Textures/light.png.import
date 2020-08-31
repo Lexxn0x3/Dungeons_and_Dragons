@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/side_torch_1.png-de2fa1d073e7d10cf75ad3045b55e278.stex"
+path="res://.import/light.png-76d438f18d35078a970bfccb23aff12b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_1.png"
-dest_files=[ "res://.import/side_torch_1.png-de2fa1d073e7d10cf75ad3045b55e278.stex" ]
+source_file="res://Textures/light.png"
+dest_files=[ "res://.import/light.png-76d438f18d35078a970bfccb23aff12b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
