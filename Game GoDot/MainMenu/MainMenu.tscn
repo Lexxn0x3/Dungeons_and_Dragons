@@ -173,7 +173,8 @@ __meta__ = {
 
 [node name="TextEdit" type="TextEdit" parent="Network/VBoxContainer"]
 margin_right = 229.0
-margin_bottom = 25.0
+margin_bottom = 19.0
+hint_tooltip = "Playername"
 size_flags_vertical = 11
 size_flags_stretch_ratio = 0.05
 custom_colors/caret_background_color = Color( 0, 0, 0, 0 )
@@ -182,10 +183,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Network/VBoxContainer"]
-margin_top = 29.0
+[node name="Server ip" type="TextEdit" parent="Network/VBoxContainer"]
+margin_top = 23.0
 margin_right = 229.0
-margin_bottom = 79.0
+margin_bottom = 42.0
+hint_tooltip = "Server ip Adress"
+size_flags_vertical = 11
+size_flags_stretch_ratio = 0.05
+custom_colors/caret_background_color = Color( 0, 0, 0, 0 )
+custom_colors/background_color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Network/VBoxContainer"]
+margin_top = 46.0
+margin_right = 229.0
+margin_bottom = 84.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 __meta__ = {
@@ -194,7 +209,7 @@ __meta__ = {
 
 [node name="Create" type="Button" parent="Network/VBoxContainer/HBoxContainer"]
 margin_right = 112.0
-margin_bottom = 50.0
+margin_bottom = 38.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 5 )
 text = "Create"
@@ -205,13 +220,13 @@ __meta__ = {
 [node name="Join" type="Button" parent="Network/VBoxContainer/HBoxContainer"]
 margin_left = 116.0
 margin_right = 229.0
-margin_bottom = 50.0
+margin_bottom = 38.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 6 )
 text = "Join"
 
 [node name="StartServer" type="Button" parent="Network/VBoxContainer"]
-margin_top = 83.0
+margin_top = 88.0
 margin_right = 229.0
 margin_bottom = 108.0
 size_flags_vertical = 11
@@ -237,6 +252,7 @@ __meta__ = {
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Map" to="." method="_on_Map_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="text_changed" from="Network/VBoxContainer/Server ip" to="." method="_on_Server_ip_text_changed"]
 [connection signal="pressed" from="Network/VBoxContainer/HBoxContainer/Create" to="." method="_on_Create_pressed"]
 [connection signal="pressed" from="Network/VBoxContainer/HBoxContainer/Join" to="." method="_on_Join_pressed"]
 [connection signal="pressed" from="Network/VBoxContainer/StartServer" to="." method="_on_StartServer_pressed"]

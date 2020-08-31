@@ -7,6 +7,7 @@ var optionsShown = false
 var optionsScene = load("res://Options.tscn")
 var options
 var playerScene = load("res://Player/Player.tscn")
+var ip_address
 
 
 # Called when the node enters the scene tree for the first time.
@@ -61,7 +62,7 @@ func _on_Join_pressed():
 	var playerName = get_node("Network/VBoxContainer/TextEdit").text
 	if playerName == "":
 		return
-	Network.connect_to_server(playerName)
+	Network.connect_to_server(playerName, ip_address)
 
 
 func _on_Create_pressed():
@@ -82,3 +83,7 @@ func _on_StartMuliplayer_pressed():
 		networkNodes.hide()
 	else:
 		networkNodes.show()
+
+
+func _on_Server_ip_text_changed():
+	ip_address = get_node("Network/VBoxContainer/Server ip").text
