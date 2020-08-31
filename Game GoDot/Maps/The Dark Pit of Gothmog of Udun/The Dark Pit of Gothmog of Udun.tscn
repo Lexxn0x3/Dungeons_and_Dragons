@@ -357,8 +357,9 @@ position = Vector2( 384.3, -230.12 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="StaticBody2D5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 593.877, -225.73 )
+position = Vector2( 181.838, -298.888 )
 scale = Vector2( 2.5, 2.5 )
+SideTorch = true
 
 [node name="StaticBody2D4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 726.894, -489.499 )
