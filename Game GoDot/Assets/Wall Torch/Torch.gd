@@ -5,6 +5,7 @@ export var SideTorch = false
 export var FlipHorizontal = false
 export var EditorOn = true
 export var NoSprite = false
+export var DefaultOn = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -15,7 +16,10 @@ func _ready():
 	pass
 
 func _enter_tree():
-	get_node("Light2D").hide()
+	if DefaultOn:
+		get_node("Light2D").show()
+	else:
+		get_node("Light2D").hide()
 	if NoSprite == true:
 		get_node("Torch").hide()
 		get_node("Side Torch").hide()

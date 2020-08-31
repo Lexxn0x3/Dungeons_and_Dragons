@@ -45,13 +45,14 @@ script = ExtResource( 10 )
 [node name="Torch" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "burning"
+frame = 2
 playing = true
 
 [node name="Side Torch" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 2 )
 animation = "burning"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]
