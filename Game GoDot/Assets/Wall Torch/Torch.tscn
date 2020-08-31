@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_1.png" type="Texture" id=1]
 [ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_2.png" type="Texture" id=2]
@@ -10,10 +10,12 @@
 [ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/torch_4.png" type="Texture" id=8]
 [ext_resource path="res://Textures/light.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Wall Torch/Torch.gd" type="Script" id=10]
+[ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/torch_off.png" type="Texture" id=11]
+[ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/side_torch_off.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "off",
 "speed": 5.0
@@ -26,7 +28,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "off",
 "speed": 5.0
@@ -44,15 +46,13 @@ script = ExtResource( 10 )
 
 [node name="Torch" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "burning"
-frame = 2
+animation = "off"
 playing = true
 
 [node name="Side Torch" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 2 )
-animation = "burning"
-frame = 3
+animation = "off"
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]

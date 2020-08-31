@@ -52,6 +52,8 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	get_node("Light2D").show()
+	get_node("Side Torch").play("burning")
+	get_node("Torch").play("burning")
 
 func _turnOn(on):
 	if on == true:

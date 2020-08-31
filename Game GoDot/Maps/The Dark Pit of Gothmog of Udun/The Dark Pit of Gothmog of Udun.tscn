@@ -314,7 +314,6 @@ __meta__ = {
 }
 
 [node name="Map PNG" type="Sprite" parent="."]
-visible = false
 position = Vector2( 257.09, -399.5 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 1 )
@@ -368,7 +367,7 @@ scale = Vector2( 2.5, 2.5 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 light_mask = 0
-position = Vector2( 3.02151, -39.2748 )
+position = Vector2( 4.21072, -39.2748 )
 occluder = SubResource( 15 )
 light_mask = 0
 

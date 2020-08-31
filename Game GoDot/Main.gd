@@ -105,12 +105,6 @@ func _instance_MainMenu():
 	var mainMenuScene = load("res://MainMenu/MainMenu.tscn")
 	mainMenu = mainMenuScene.instance()
 	add_child(mainMenu)
-	
-func _queue_free_player_map_escMenu_options():
-	player.queue_free()
-	menu.queue_free()
-	map.queue_free()
-	#mainMenu.queue_free()
 
 #networking disconnecting
 func _on_player_disconnected(id):
