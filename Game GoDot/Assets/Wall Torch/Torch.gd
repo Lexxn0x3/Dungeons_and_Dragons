@@ -13,9 +13,6 @@ export var DefaultOn = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
-func _enter_tree():
 	if DefaultOn:
 		get_node("Light2D").show()
 	else:
@@ -23,14 +20,15 @@ func _enter_tree():
 	if NoSprite == true:
 		get_node("Torch").hide()
 		get_node("Side Torch").hide()
-	if SideTorch:
-		get_node("Torch").hide()
-		get_node("Side Torch").show()
 	else:
-		get_node("Torch").show()
-		get_node("Side Torch").hide()
-	if FlipHorizontal:
-		get_node("Side Torch").flip_h = true
+		if SideTorch:
+			get_node("Torch").hide()
+			get_node("Side Torch").show()
+		else:
+			get_node("Torch").show()
+			get_node("Side Torch").hide()
+		if FlipHorizontal:
+			get_node("Side Torch").flip_h = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

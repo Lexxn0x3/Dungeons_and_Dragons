@@ -76,26 +76,24 @@ func _on_Server_hitPlay(map):
 	var player = preload("res://Player/Player.tscn").instance()
 	player.set_name(str(selfPeerID))
 	player.set_network_master(selfPeerID)
-	print(player)
+	if map == PoolIntArray([0]):
+		mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
+	if map == PoolIntArray([1]):
+		mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
+	map = mapScene.instance()
+	add_child(map)
 	add_child(player)
-	if map != PoolIntArray():
-		if map == PoolIntArray([0]):
-			mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
-		if map == PoolIntArray([1]):
-			mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
-		map = mapScene.instance()
-		add_child(map)
+	mainMenu.queue_free()
+	playing = true
+	if optionsShown == true:
+		options.queue_free()
+		optionsShown = false
 		mainMenu.queue_free()
-		playing = true
-		if optionsShown == true:
-			options.queue_free()
-			optionsShown = false
-			mainMenu.queue_free()
-		playing = true
-		if optionsShown == true:
-			options.queue_free()
-			optionsShown = false
-			
+	playing = true
+	if optionsShown == true:
+		options.queue_free()
+		optionsShown = false
+		
 	#other players
 	for p in Network.player_info:
 		player = preload("res://Player/Player.tscn").instance()

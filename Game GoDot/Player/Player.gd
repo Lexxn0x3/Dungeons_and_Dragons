@@ -32,3 +32,7 @@ func _physics_process(delta):
 		rset_unreliable("slave_position", self.position)
 	else:
 		self.position = slave_position
+
+func _ready():
+	if is_network_master() == false:
+		get_node("PlayerName").text = Network.player_info[self.get_network_master()].name

@@ -73,7 +73,13 @@ func _on_Create_pressed():
 
 
 func _on_StartServer_pressed():
-	rpc("StartServer", itemList.get_selected_items())
+	if is_network_master():
+		var map = itemList.get_selected_items()
+		if map != PoolIntArray():
+			rpc("StartServer", itemList.get_selected_items())
+			get_tree().refuse_new_network_connections = true;
+	else:
+		pass
 
 remotesync func StartServer(map):
 	get_parent()._on_Server_hitPlay(map)
