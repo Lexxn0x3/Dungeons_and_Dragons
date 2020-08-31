@@ -41,21 +41,21 @@ animations = [ {
 [node name="Torch" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "burning"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Side Torch" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 2 )
 animation = "burning"
-frame = 2
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 9 )
-texture_scale = 0.1
-color = Color( 0.745098, 0.458824, 0.0509804, 1 )
+texture_scale = 0.2
+color = Color( 0.721569, 0.482353, 0.137255, 1 )
+energy = 1.3
 shadow_enabled = true
-shadow_gradient_length = 1.2
+shadow_gradient_length = 5.0
 shadow_filter = 5
 shadow_filter_smooth = 12.3

@@ -62,23 +62,23 @@ __meta__ = {
 
 [node name="Name" type="Label" parent="Background_Info/Basic_Infos"]
 margin_top = 13.0
-margin_right = 84.0
+margin_right = 104.0
 margin_bottom = 27.0
-text = "Robin Rosner"
+text = "Lana Lindenberg"
 
 [node name="Race" type="Label" parent="Background_Info/Basic_Infos"]
-margin_left = 114.0
+margin_left = 134.0
 margin_top = 13.0
-margin_right = 155.0
+margin_right = 175.0
 margin_bottom = 27.0
 text = "Hal-Elf"
 
 [node name="level_ges" type="Label" parent="Background_Info/Basic_Infos"]
-margin_left = 185.0
+margin_left = 205.0
 margin_top = 13.0
-margin_right = 239.0
+margin_right = 259.0
 margin_bottom = 27.0
-text = "Level 99"
+text = "Level 20"
 
 [node name="XP" type="ProgressBar" parent="Background_Info"]
 anchor_right = 1.0
@@ -144,7 +144,6 @@ __meta__ = {
 }
 
 [node name="Stats" type="Panel" parent="Background_Info/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -530,19 +529,19 @@ __meta__ = {
 }
 
 [node name="Skills" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Skills"]
-margin_right = 156.0
-margin_bottom = 602.0
+margin_right = 144.0
+margin_bottom = 616.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="Skills" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills"]
-margin_right = 374.0
-margin_bottom = 602.0
+margin_right = 144.0
+margin_bottom = 616.0
 size_flags_horizontal = 3
 custom_constants/separation = 10
 
 [node name="Acrobatics" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 24.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Acrobatics"]
@@ -555,7 +554,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Acrobatics"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -563,9 +562,9 @@ text = "Acrobatics"
 align = 1
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Acrobatics"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -573,21 +572,20 @@ align = 1
 
 [node name="Animal Handling" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
 margin_top = 34.0
-margin_right = 374.0
-margin_bottom = 58.0
+margin_right = 144.0
+margin_bottom = 65.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Animal Handling"]
 margin_right = 24.0
-margin_bottom = 24.0
+margin_bottom = 31.0
 custom_styles/focus = SubResource( 2 )
 disabled = true
 button_mask = 0
 
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Animal Handling"]
 margin_left = 28.0
-margin_top = 5.0
-margin_right = 342.0
-margin_bottom = 19.0
+margin_right = 112.0
+margin_bottom = 31.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 text = "Animal Handling"
@@ -595,18 +593,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Animal Handling"]
-margin_left = 346.0
-margin_top = 5.0
-margin_right = 374.0
-margin_bottom = 19.0
+margin_left = 116.0
+margin_top = 8.0
+margin_right = 144.0
+margin_bottom = 22.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Arcana" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 68.0
-margin_right = 374.0
-margin_bottom = 92.0
+margin_top = 75.0
+margin_right = 144.0
+margin_bottom = 99.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Arcana"]
 margin_right = 24.0
@@ -618,7 +616,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Arcana"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -627,18 +625,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Arcana"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Athletics" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 102.0
-margin_right = 374.0
-margin_bottom = 126.0
+margin_top = 109.0
+margin_right = 144.0
+margin_bottom = 133.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Athletics"]
 margin_right = 24.0
@@ -650,7 +648,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Athletics"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -659,18 +657,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Athletics"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Deception" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 136.0
-margin_right = 374.0
-margin_bottom = 160.0
+margin_top = 143.0
+margin_right = 144.0
+margin_bottom = 167.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Deception"]
 margin_right = 24.0
@@ -682,7 +680,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Deception"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -691,18 +689,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Deception"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="History" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 170.0
-margin_right = 374.0
-margin_bottom = 194.0
+margin_top = 177.0
+margin_right = 144.0
+margin_bottom = 201.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/History"]
 margin_right = 24.0
@@ -714,7 +712,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/History"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -723,18 +721,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/History"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Insight" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 204.0
-margin_right = 374.0
-margin_bottom = 228.0
+margin_top = 211.0
+margin_right = 144.0
+margin_bottom = 235.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Insight"]
 margin_right = 24.0
@@ -746,7 +744,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Insight"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -755,18 +753,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Insight"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Intimidation" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 238.0
-margin_right = 374.0
-margin_bottom = 262.0
+margin_top = 245.0
+margin_right = 144.0
+margin_bottom = 269.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Intimidation"]
 margin_right = 24.0
@@ -778,7 +776,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Intimidation"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -787,18 +785,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Intimidation"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Investigation" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 272.0
-margin_right = 374.0
-margin_bottom = 296.0
+margin_top = 279.0
+margin_right = 144.0
+margin_bottom = 303.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Investigation"]
 margin_right = 24.0
@@ -810,7 +808,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Investigation"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -819,18 +817,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Investigation"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Medicine" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 306.0
-margin_right = 374.0
-margin_bottom = 330.0
+margin_top = 313.0
+margin_right = 144.0
+margin_bottom = 337.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Medicine"]
 margin_right = 24.0
@@ -842,7 +840,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Medicine"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -851,18 +849,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Medicine"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Nature" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 340.0
-margin_right = 374.0
-margin_bottom = 364.0
+margin_top = 347.0
+margin_right = 144.0
+margin_bottom = 371.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Nature"]
 margin_right = 24.0
@@ -874,7 +872,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Nature"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -883,18 +881,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Nature"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Perception" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 374.0
-margin_right = 374.0
-margin_bottom = 398.0
+margin_top = 381.0
+margin_right = 144.0
+margin_bottom = 405.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Perception"]
 margin_right = 24.0
@@ -906,7 +904,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Perception"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -915,18 +913,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Perception"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Performance" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 408.0
-margin_right = 374.0
-margin_bottom = 432.0
+margin_top = 415.0
+margin_right = 144.0
+margin_bottom = 439.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Performance"]
 margin_right = 24.0
@@ -938,7 +936,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Performance"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -947,18 +945,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Performance"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Persuasion" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 442.0
-margin_right = 374.0
-margin_bottom = 466.0
+margin_top = 449.0
+margin_right = 144.0
+margin_bottom = 473.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Persuasion"]
 margin_right = 24.0
@@ -970,7 +968,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Persuasion"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -979,18 +977,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Persuasion"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Religion" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 476.0
-margin_right = 374.0
-margin_bottom = 500.0
+margin_top = 483.0
+margin_right = 144.0
+margin_bottom = 507.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Religion"]
 margin_right = 24.0
@@ -1002,7 +1000,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Religion"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1011,31 +1009,30 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Religion"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Sleight of Hand" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 510.0
-margin_right = 374.0
-margin_bottom = 534.0
+margin_top = 517.0
+margin_right = 144.0
+margin_bottom = 548.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Sleight of Hand"]
 margin_right = 24.0
-margin_bottom = 24.0
+margin_bottom = 31.0
 custom_styles/focus = SubResource( 2 )
 disabled = true
 button_mask = 0
 
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Sleight of Hand"]
 margin_left = 28.0
-margin_top = 5.0
-margin_right = 342.0
-margin_bottom = 19.0
+margin_right = 112.0
+margin_bottom = 31.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 text = "Sleight of Hand"
@@ -1043,18 +1040,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Sleight of Hand"]
-margin_left = 346.0
-margin_top = 5.0
-margin_right = 374.0
-margin_bottom = 19.0
+margin_left = 116.0
+margin_top = 8.0
+margin_right = 144.0
+margin_bottom = 22.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Stealth" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 544.0
-margin_right = 374.0
-margin_bottom = 568.0
+margin_top = 558.0
+margin_right = 144.0
+margin_bottom = 582.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Stealth"]
 margin_right = 24.0
@@ -1066,7 +1063,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Stealth"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1075,18 +1072,18 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Stealth"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
 align = 1
 
 [node name="Survival" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills"]
-margin_top = 578.0
-margin_right = 374.0
-margin_bottom = 602.0
+margin_top = 592.0
+margin_right = 144.0
+margin_bottom = 616.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Survival"]
 margin_right = 24.0
@@ -1098,7 +1095,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Survival"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1107,9 +1104,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Skills/Skills/Skills/Survival"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1135,7 +1132,7 @@ size_flags_horizontal = 3
 custom_constants/separation = 15
 
 [node name="Header" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws"]
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 14.0
 
 [node name="Profficiency" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Header"]
@@ -1145,7 +1142,7 @@ text = "Prof"
 
 [node name="Ability" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Header"]
 margin_left = 29.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 14.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1153,20 +1150,20 @@ text = "Ability"
 align = 1
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Header"]
-margin_left = 346.0
-margin_right = 374.0
+margin_left = 116.0
+margin_right = 144.0
 margin_bottom = 14.0
 text = "Mod"
 
 [node name="Skills" type="VBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws"]
 margin_top = 29.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 198.0
 size_flags_horizontal = 3
 custom_constants/separation = 5
 
 [node name="Strength" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 24.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Strength"]
@@ -1179,7 +1176,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Strength"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1187,9 +1184,9 @@ text = "Strength"
 align = 1
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Strength"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1197,7 +1194,7 @@ align = 1
 
 [node name="Dexterity" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
 margin_top = 29.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 53.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Dexterity"]
@@ -1210,7 +1207,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Dexterity"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1219,9 +1216,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Dexterity"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1229,7 +1226,7 @@ align = 1
 
 [node name="Constitution" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
 margin_top = 58.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 82.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Constitution"]
@@ -1242,7 +1239,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Constitution"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1250,9 +1247,9 @@ text = "Constitution"
 align = 1
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Constitution"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1260,7 +1257,7 @@ align = 1
 
 [node name="Intelligence" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
 margin_top = 87.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 111.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Intelligence"]
@@ -1273,7 +1270,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Intelligence"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1282,9 +1279,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Intelligence"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1292,7 +1289,7 @@ align = 1
 
 [node name="Wisdom" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
 margin_top = 116.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 140.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Wisdom"]
@@ -1305,7 +1302,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Wisdom"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1314,9 +1311,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Wisdom"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -1324,7 +1321,7 @@ align = 1
 
 [node name="Charisma" type="HBoxContainer" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills"]
 margin_top = 145.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 169.0
 
 [node name="Profficiency" type="CheckBox" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Charisma"]
@@ -1337,7 +1334,7 @@ button_mask = 0
 [node name="Name" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Charisma"]
 margin_left = 28.0
 margin_top = 5.0
-margin_right = 342.0
+margin_right = 112.0
 margin_bottom = 19.0
 grow_horizontal = 2
 size_flags_horizontal = 3
@@ -1346,9 +1343,9 @@ align = 1
 autowrap = true
 
 [node name="Modifier" type="Label" parent="Background_Info/TabContainer/Stats/Saving Throws/Saving Throws/Skills/Charisma"]
-margin_left = 346.0
+margin_left = 116.0
 margin_top = 5.0
-margin_right = 374.0
+margin_right = 144.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 28, 0 )
 text = "0"
@@ -5668,242 +5665,6 @@ size_flags_vertical = 7
 text = "0"
 align = 1
 valign = 1
-
-[node name="Header Languages" type="HBoxContainer" parent="Background_Info/TabContainer/Proficiencies"]
-anchor_right = 0.5
-margin_left = 25.0
-margin_top = 600.0
-margin_bottom = 614.0
-rect_scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Languages" type="Label" parent="Background_Info/TabContainer/Proficiencies/Header Languages"]
-margin_right = 408.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-text = "Languages"
-align = 1
-
-[node name="Languages" type="ScrollContainer" parent="Background_Info/TabContainer/Proficiencies"]
-anchor_right = 0.67
-margin_left = 25.0
-margin_top = 640.0
-margin_right = -25.0
-margin_bottom = 740.0
-rect_min_size = Vector2( 0, 100 )
-rect_scale = Vector2( 1.5, 1.5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Languages" type="ItemList" parent="Background_Info/TabContainer/Proficiencies/Languages"]
-margin_right = 530.89
-margin_bottom = 100.0
-mouse_filter = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-allow_reselect = true
-
-[node name="Languages" type="VBoxContainer" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages"]
-anchor_right = 1.0
-custom_constants/separation = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1" type="HBoxContainer" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages"]
-margin_right = 556.0
-margin_bottom = 20.0
-custom_constants/separation = 25
-alignment = 1
-
-[node name="Common" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line1"]
-margin_left = 243.0
-margin_right = 313.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Common"
-flat = true
-
-[node name="Line2" type="HBoxContainer" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages"]
-margin_top = 25.0
-margin_right = 556.0
-margin_bottom = 45.0
-custom_constants/separation = 25
-alignment = 1
-
-[node name="Dwarvish" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line2"]
-margin_left = 50.0
-margin_right = 120.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Dwarvish"
-flat = true
-
-[node name="Elvish" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line2"]
-margin_left = 145.0
-margin_right = 194.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Elvish"
-flat = true
-
-[node name="Giant" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line2"]
-margin_left = 219.0
-margin_right = 265.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Giant"
-flat = true
-
-[node name="Gnomish" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line2"]
-margin_left = 290.0
-margin_right = 360.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Gnomish"
-flat = true
-
-[node name="Halfling" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line2"]
-margin_left = 385.0
-margin_right = 445.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Halfling"
-flat = true
-
-[node name="Orc" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line2"]
-margin_left = 470.0
-margin_right = 505.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Orc"
-flat = true
-
-[node name="Line3" type="HBoxContainer" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages"]
-margin_top = 50.0
-margin_right = 556.0
-margin_bottom = 70.0
-custom_constants/separation = 25
-alignment = 1
-
-[node name="Abyssal" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line3"]
-margin_left = 51.0
-margin_right = 112.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Abyssal"
-flat = true
-
-[node name="Celestial" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line3"]
-margin_left = 137.0
-margin_right = 204.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Celestial"
-flat = true
-
-[node name="Draconic" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line3"]
-margin_left = 229.0
-margin_right = 297.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Draconic"
-flat = true
-
-[node name="Gnomish" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line3"]
-margin_left = 322.0
-margin_right = 418.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Deep Speech"
-flat = true
-
-[node name="Infernal" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line3"]
-margin_left = 443.0
-margin_right = 504.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Infernal"
-flat = true
-
-[node name="Line4" type="HBoxContainer" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages"]
-margin_top = 75.0
-margin_right = 556.0
-margin_bottom = 95.0
-custom_constants/separation = 25
-alignment = 1
-
-[node name="Primordial" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line4"]
-margin_left = 134.0
-margin_right = 212.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Primordial"
-flat = true
-
-[node name="Sylvan" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line4"]
-margin_left = 237.0
-margin_right = 289.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Sylvan"
-flat = true
-
-[node name="Undercommon" type="Button" parent="Background_Info/TabContainer/Proficiencies/Languages/Languages/Languages/Line4"]
-margin_left = 314.0
-margin_right = 422.0
-margin_bottom = 20.0
-focus_mode = 0
-shortcut_in_tooltip = false
-button_mask = 0
-enabled_focus_mode = 0
-text = "Undercommon"
-flat = true
 
 [node name="Spells" type="Panel" parent="Background_Info/TabContainer"]
 visible = false
