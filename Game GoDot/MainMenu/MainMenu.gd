@@ -20,9 +20,6 @@ func _process(delta):
 
 
 #untile here all Menu button funktions of the MainMenu
-func _on_Start_pressed():
-	get_parent()._on_MainMenu_hitPlay()
-
 
 func _on_Quit_pressed():
 	pass # Replace with function body.

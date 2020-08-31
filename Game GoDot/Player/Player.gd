@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Player movement speed
-const speed = 10000
+const speed = 7000
 
 slave var slave_position = Vector2()
 

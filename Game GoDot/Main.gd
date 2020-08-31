@@ -47,30 +47,6 @@ func _input(ev):
 	else:
 		pass
 
-func _on_MainMenu_hitPlay():
-	var selfPeerID = get_tree().get_network_unique_id()
-	player = playerScene.instance()
-	player.set_network_master(selfPeerID)
-	var item = mainMenu.get_selected_map()
-	if item != PoolIntArray():
-		if item == PoolIntArray([0]):
-			mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
-		if item == PoolIntArray([1]):
-			mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
-		map = mapScene.instance()
-		add_child(map)
-		add_child(player)
-		mainMenu.queue_free()
-		playing = true
-		if optionsShown == true:
-			options.queue_free()
-			optionsShown = false
-			mainMenu.queue_free()
-		playing = true
-		if optionsShown == true:
-			options.queue_free()
-			optionsShown = false
-
 func _on_Server_hitPlay(map):
 	var selfPeerID = get_tree().get_network_unique_id()
 	var player = preload("res://Player/Player.tscn").instance()

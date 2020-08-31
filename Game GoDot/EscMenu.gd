@@ -33,6 +33,7 @@ func _on_Options_pressed():
 
 
 func _on_MainMenu_button_pressed():
+	get_tree().network_peer = null
 	get_parent()._queue_free_player_map_escMenu_options()
 	get_parent()._instance_MainMenu()
 	get_parent().playing = false

@@ -23,6 +23,8 @@ func create_server(player_nickname):
 	get_tree().set_network_peer(peer)
 
 func connect_to_server(player_nickname, server_ip):
+	if server_ip == null:
+		server_ip = DEFAULT_IP
 	my_info.name = player_nickname
 	var peer = NetworkedMultiplayerENet.new()
 	peer.create_client(server_ip, DEFAULT_PORT)
