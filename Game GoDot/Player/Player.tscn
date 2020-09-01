@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_1.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -6,7 +6,9 @@
 [ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_4.png" type="Texture" id=4]
 [ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_3.png" type="Texture" id=5]
 [ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_2.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Wall Torch/Torch.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 26.75, 31.5 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -16,15 +18,16 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 15.9361, 16.2202 )
-
 [sub_resource type="CircleShape2D" id=3]
-radius = 83.7495
+radius = 71.8251
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.25, 9 )
+shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.150009, 0.268127 )
@@ -33,9 +36,6 @@ z_index = 2
 frames = SubResource( 1 )
 frame = 3
 playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 2.50427, -0.16571 )
@@ -49,19 +49,6 @@ __meta__ = {
 zoomDefault = 0.3
 zoomMax = 2.0
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="Torch Collision" type="CollisionShape2D" parent="Area2D"]
-light_mask = 65536
-shape = SubResource( 3 )
-
-[node name="Torch" parent="." instance=ExtResource( 7 )]
-position = Vector2( -4.94975, -63.6396 )
-scale = Vector2( 3, 3 )
-EditorOn = false
-NoSprite = true
-DefaultOn = true
-
 [node name="PlayerName" type="Label" parent="."]
 margin_left = -75.0
 margin_top = -54.177
@@ -72,3 +59,12 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 5.04538, 63.9081 )
+collision_layer = 2147549184
+collision_mask = 65536
+
+[node name="Interaction Collision" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( -5, -58.25 )
+shape = SubResource( 3 )

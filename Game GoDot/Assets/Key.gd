@@ -1,0 +1,26 @@
+tool
+extends StaticBody2D
+
+export(String, "Key1", "Key2") var selectedKey setget _setSelectedKey
+export(Color, RGBA) var color setget _setColor
+
+func _setSelectedKey(selection):
+	selectedKey = selection
+	_showKey(selection)
+
+func _setColor(newColor):
+	color = newColor
+	_showKey(selectedKey)
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	_showKey(selectedKey)
+
+func _showKey(selection):
+	#match selection:
+	get_node("AnimatedSprite").animation = selection
+	get_node("AnimatedSprite").modulate = color
+	
+#		0:
+#			get_node("AnimatedSprite").animation = "Key1"
+#		1:
+#			get_node("AnimatedSprite").animation = "Key2"

@@ -1,0 +1,172 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Door/Door.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Door/DoorInteraction.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/LiberationSans-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 14.4298
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 14.6535, 1.09724 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( -15.8828, -3.91179, -15.0068, -3.89093, -14.986, -4.91292, -12.942, -4.91292, -12.942, -5.93491, -10.9189, -5.91405, -10.9397, -6.95689, -6.95607, -6.89432, -6.93521, -7.74946, -0.928436, -7.79117, -0.991007, -6.95689, 1.07382, -6.89432, 1.09468, -7.77031, 7.0806, -7.74946, 7.0806, -6.97775, 11.0643, -6.93604, 11.0225, -5.97662, 13.0248, -5.95577, 13.0248, -4.87121, 15.0896, -4.89207, 15.0271, -3.91179, 15.903, -3.95351, 15.8613, -5.10063, 15.6945, -6.26862, 7.62287, -8.95915, -6.95608, -9.18858, -15.132, -6.60233 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( -16.1719, -7.98438, 16.0382, -8.04387, 15.9965, -9.48299, -15.9531, -9.4375 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 1.6164, 15.2994 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+polygon = PoolVector2Array( -0.015625, -15.6836, -0.0195313, 15.9023, 0.015625, 15.8984, 0.0078125, -15.6875 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 2.19183, 15.3097 )
+
+[sub_resource type="OccluderPolygon2D" id=9]
+polygon = PoolVector2Array( -7.95261, -16.0116, -8.08896, 16.184, -8.03015, 16.1952, -7.9175, -16.0116 )
+
+[node name="Door" type="Node2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="OpenDoorBtn" type="Button" parent="."]
+margin_left = 8.8258
+margin_top = -18.7569
+margin_right = 117.826
+margin_bottom = 33.2431
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "Open"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2147549184
+collision_mask = 65536
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Door Closed 1" type="StaticBody2D" parent="."]
+
+[node name="SpriteClosed" type="Sprite" parent="Door Closed 1"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96.084, 96.158, 31.7425, 15.55 )
+
+[node name="SpriteOpen" type="Sprite" parent="Door Closed 1"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Closed 1"]
+light_mask = -2147483647
+position = Vector2( 0, -1.17984 )
+shape = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Door Closed 1"]
+occluder = SubResource( 4 )
+
+[node name="Door Closed 2" type="StaticBody2D" parent="."]
+collision_layer = 18
+collision_mask = 18
+
+[node name="SpriteClosed" type="Sprite" parent="Door Closed 2"]
+visible = false
+position = Vector2( 0.0178998, 0.111402 )
+scale = Vector2( 1.02679, 1.01816 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96.428, 48.044, 31, 15.934 )
+
+[node name="SpriteOpen" type="Sprite" parent="Door Closed 2"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Closed 2"]
+position = Vector2( 0.0589905, -1.17984 )
+shape = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Door Closed 2"]
+visible = false
+occluder = SubResource( 5 )
+
+[node name="Door Closed Vertical 1" type="StaticBody2D" parent="."]
+collision_layer = 18
+collision_mask = 18
+
+[node name="SpriteOpen" type="Sprite" parent="Door Closed Vertical 1"]
+visible = false
+
+[node name="SpriteClosed" type="Sprite" parent="Door Closed Vertical 1"]
+visible = false
+position = Vector2( 0.0736439, 0.111402 )
+scale = Vector2( 1.04908, 1.01816 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112.372, 64.535, 5.269, 31 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Closed Vertical 1"]
+shape = SubResource( 6 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Door Closed Vertical 1"]
+visible = false
+occluder = SubResource( 7 )
+
+[node name="Door Closed Vertical 2" type="StaticBody2D" parent="."]
+collision_layer = 18
+collision_mask = 18
+
+[node name="SpriteClosed" type="Sprite" parent="Door Closed Vertical 2"]
+visible = false
+position = Vector2( 0.0736439, 0.111402 )
+scale = Vector2( 1.04908, 1.01816 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 101.01, 64.06, 5.912, 31.958 )
+
+[node name="SpriteOpen" type="Sprite" parent="Door Closed Vertical 2"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Closed Vertical 2"]
+shape = SubResource( 6 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Door Closed Vertical 2"]
+visible = false
+occluder = SubResource( 7 )
+
+[node name="Door Closed Vertical 3" type="StaticBody2D" parent="."]
+collision_layer = 18
+collision_mask = 18
+
+[node name="SpriteClosed" type="Sprite" parent="Door Closed Vertical 3"]
+visible = false
+position = Vector2( 0.0736439, 0.111402 )
+scale = Vector2( 1.04908, 1.01816 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 138.302, 64.252, 20.819, 31.614 )
+
+[node name="SpriteOpen" type="Sprite" parent="Door Closed Vertical 3"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Closed Vertical 3"]
+position = Vector2( -8.12642, 0.187286 )
+shape = SubResource( 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Door Closed Vertical 3"]
+visible = false
+occluder = SubResource( 9 )
+[connection signal="pressed" from="OpenDoorBtn" to="Area2D" method="_on_OpenDoorBtn_pressed"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_Area2D_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_Area2D_mouse_exited"]

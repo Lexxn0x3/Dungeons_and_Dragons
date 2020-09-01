@@ -49,14 +49,13 @@ func _process(delta):
 				get_node("Torch").show()
 				get_node("Side Torch").hide()
 
-
-func _on_Area2D_body_entered(body):
-	get_node("Light2D").show()
-	get_node("Side Torch").play("burning")
-	get_node("Torch").play("burning")
-
 func _turnOn(on):
 	if on == true:
 		get_node("Light2D").show()
 	else:
 		get_node("Light2D").hide()
+
+func _on_Area2D_area_entered(area):
+	get_node("Light2D").show()
+	get_node("Side Torch").play("burning")
+	get_node("Torch").play("burning")

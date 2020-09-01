@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_1_1.png" type="Texture" id=3]
+[ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_2_1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Key.gd" type="Script" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Key1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Key2",
+"speed": 5.0
+} ]
+
+[node name="Key" type="StaticBody2D"]
+script = ExtResource( 9 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+frames = SubResource( 1 )
+animation = "Key1"
+speed_scale = 0.7
