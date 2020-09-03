@@ -3,6 +3,7 @@ extends StaticBody2D
 
 export(String, "Key1", "Key2") var selectedKey setget _setSelectedKey
 export(Color, RGBA) var color setget _setColor
+export(String) var key
 
 func _setSelectedKey(selection):
 	selectedKey = selection
@@ -24,3 +25,19 @@ func _showKey(selection):
 #			get_node("AnimatedSprite").animation = "Key1"
 #		1:
 #			get_node("AnimatedSprite").animation = "Key2"
+
+
+func _on_Area2D_mouse_entered():
+	print("mouse entered")
+
+
+func _on_Area2D_area_entered(area):
+	print("entered script: key.gd")
+
+
+func _on_Area2D_body_entered(body):
+	print("body entered: key.gd")
+
+func _getInformation():
+	#print(Inventory.keys)
+	return(key)

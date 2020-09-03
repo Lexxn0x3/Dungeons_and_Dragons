@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_1.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -7,10 +7,10 @@
 [ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_3.png" type="Texture" id=5]
 [ext_resource path="res://Textures/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_2.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 26.75, 31.5 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
 "loop": true,
@@ -21,19 +21,22 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=3]
 radius = 71.8251
 
+[sub_resource type="CircleShape2D" id=4]
+radius = 39.5756
+
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -4.25, 9 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.150009, 0.268127 )
 scale = Vector2( 5, 5 )
 z_index = 2
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 frame = 3
 playing = true
 
@@ -68,3 +71,13 @@ collision_mask = 65536
 [node name="Interaction Collision" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2( -5, -58.25 )
 shape = SubResource( 3 )
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2( 5.04538, 63.9081 )
+collision_layer = 2147484160
+collision_mask = 512
+
+[node name="Pickup Collsision" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( -5, -58.25 )
+shape = SubResource( 4 )
+[connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D3_body_entered"]

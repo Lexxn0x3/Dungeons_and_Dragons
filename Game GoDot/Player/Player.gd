@@ -36,3 +36,10 @@ func _physics_process(delta):
 func _ready():
 	if is_network_master() == false:
 		get_node("PlayerName").text = Network.player_info[self.get_network_master()].name
+
+
+func _on_Area2D3_body_entered(body):
+	#print(body._getInformation())
+	Inventory.keys.insert(Inventory.keys.size(), body._getInformation())
+	#print(Inventory.keys)
+	body.queue_free()

@@ -1,6 +1,7 @@
 extends Area2D
 
 var currDoorClosed
+var doorKey
 
 onready var button = get_parent().get_node("OpenDoorBtn")
 # Declare member variables here. Examples:
@@ -11,6 +12,7 @@ onready var button = get_parent().get_node("OpenDoorBtn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button.hide()
+	doorKey = get_parent().doorKey
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,16 +21,19 @@ func _ready():
 
 
 func _on_Area2D_area_entered(area):
-	currDoorClosed = get_parent().doorClosed
-	if currDoorClosed:
-		button.text = "Open"
+	#print(doorKey)
+	if Inventory.keys.has(doorKey) || doorKey == "":
+		currDoorClosed = get_parent().doorClosed
+		if currDoorClosed:
+			button.text = "Open"
+		else:
+			button.text = "Close"
+		button.show()
 	else:
-		button.text = "Close"
-	button.show()
+		pass
 
 func _on_Area2D_area_exited(area):
 	button.hide()
-
 
 func _on_OpenDoorBtn_pressed():
 	if is_network_master():
