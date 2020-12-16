@@ -11,6 +11,7 @@ var my_info = { name = '', position = Vector2(360, 180), idx = null }
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
+	get_tree().connect("peer_disconnected", self, "_player_disconnected")
 	get_tree().connect("connected_to_server", self, "_connected_ok")
 	get_tree().connect("connection_failed", self, "_connected_fail")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
@@ -34,6 +35,7 @@ func _connected_ok():
 	pass # Only called on clients, not server. Will go unused; not useful here.
 
 func _player_disconnected(id):
+	print("player disconnected")
 	rpc("remove_player", id)
 	player_info.erase(id) # Erase player from info
 
@@ -47,6 +49,6 @@ remote func register_player(info):
 	player_info[id] = info
 
 remotesync func remove_player(id):
-	#get_node("Playerlist").remove_item(player_info[id].idx)
-	#get_parent().get_node(".").get_node(str(id)).queue_free()
-	pass
+	#get_node("Playerlist").remove_item("[KinematicBody2D:"+str(id)+"]")
+	#get_node("Playerlist").remove_item(player_info[id].id)
+	print(get_parent().get_node(".").get_node("[KinematicBody2D:"+str(id)+"]").queue_free())

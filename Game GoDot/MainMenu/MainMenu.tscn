@@ -1,41 +1,63 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://MainMenu/LiberationSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/MenuDynanicFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/GUI Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Fonts/DungeonFont.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 0 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 45
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 0, 0, 0 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
 
 [sub_resource type="StyleBoxFlat" id=5]
 
 [sub_resource type="StyleBoxFlat" id=6]
 
 [sub_resource type="StyleBoxFlat" id=7]
-
-[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 25
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 30
+use_mipmaps = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+font_data = ExtResource( 4 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.76003
-margin_right = 4.76001
+margin_left = 4.053
+margin_top = -0.707123
+margin_right = 4.05298
+margin_bottom = -0.707153
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -4.0
@@ -55,32 +77,32 @@ margin_right = 1800.0
 margin_bottom = 1000.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_right = 353.0
+margin_right = 272.0
 margin_bottom = 920.0
 size_flags_vertical = 3
 alignment = 1
 
 [node name="StartMuliplayer" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 352.0
-margin_right = 353.0
+margin_right = 191.0
 margin_bottom = 403.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_hover = Color( 0.694118, 0.694118, 0.694118, 1 )
 custom_colors/font_color_pressed = Color( 0.501961, 0.501961, 0.501961, 1 )
-text = "Multiplayer Game"
+text = "Join Game"
 flat = true
 
 [node name="Map" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 407.0
-margin_right = 286.0
+margin_right = 272.0
 margin_bottom = 458.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_hover = Color( 0.694118, 0.694118, 0.694118, 1 )
 custom_colors/font_color_pressed = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "Map Selection"
@@ -91,12 +113,12 @@ __meta__ = {
 
 [node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 462.0
-margin_right = 156.0
+margin_right = 139.0
 margin_bottom = 513.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_hover = Color( 0.694118, 0.694118, 0.694118, 1 )
 custom_colors/font_color_pressed = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "Options"
@@ -104,18 +126,19 @@ flat = true
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 517.0
-margin_right = 218.0
+margin_right = 190.0
 margin_bottom = 568.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_hover = Color( 0.694118, 0.694118, 0.694118, 1 )
 custom_colors/font_color_pressed = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "Quit Game"
 flat = true
 
 [node name="ItemList" type="ItemList" parent="."]
+visible = false
 anchor_left = 0.197
 anchor_top = 0.5
 anchor_right = 0.197
@@ -126,8 +149,8 @@ margin_right = 568.403
 margin_bottom = 161.953
 size_flags_horizontal = 12
 size_flags_vertical = 12
-custom_styles/bg_focus = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/bg_focus = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 items = [ "The Dark Pit of Gothmog of Udun", null, false, "The Warrens of Tenebrous Death", null, false ]
@@ -199,7 +222,7 @@ __meta__ = {
 margin_right = 112.0
 margin_bottom = 38.0
 size_flags_horizontal = 3
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
 text = "Create"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -210,7 +233,7 @@ margin_left = 116.0
 margin_right = 229.0
 margin_bottom = 38.0
 size_flags_horizontal = 3
-custom_styles/normal = SubResource( 6 )
+custom_styles/normal = SubResource( 5 )
 text = "Join"
 
 [node name="StartServer" type="Button" parent="Network/VBoxContainer"]
@@ -219,7 +242,7 @@ margin_right = 229.0
 margin_bottom = 108.0
 size_flags_vertical = 11
 size_flags_stretch_ratio = 0.05
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 6 )
 text = "Start Server"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -230,11 +253,377 @@ margin_left = -412.0
 margin_top = 723.691
 margin_right = -183.0
 margin_bottom = 732.691
-custom_styles/bg = SubResource( 8 )
+custom_styles/bg = SubResource( 7 )
 auto_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Main Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.007
+anchor_right = 0.215104
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Menu"]
+margin_right = 399.0
+margin_bottom = 376.0
+size_flags_vertical = 3
+
+[node name="Play Online" type="Button" parent="Main Menu"]
+margin_top = 380.0
+margin_right = 399.0
+margin_bottom = 431.0
+theme = ExtResource( 3 )
+text = "Play Online"
+align = 0
+
+[node name="Create Game" type="Button" parent="Main Menu"]
+margin_top = 435.0
+margin_right = 399.0
+margin_bottom = 486.0
+theme = ExtResource( 3 )
+text = "Create Game"
+align = 0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HSeparator" type="HSeparator" parent="Main Menu"]
+margin_top = 490.0
+margin_right = 399.0
+margin_bottom = 510.0
+theme = ExtResource( 3 )
+
+[node name="Player Settings" type="Button" parent="Main Menu"]
+margin_top = 514.0
+margin_right = 399.0
+margin_bottom = 565.0
+theme = ExtResource( 3 )
+text = "Player Settings"
+align = 0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HSeparator2" type="HSeparator" parent="Main Menu"]
+margin_top = 569.0
+margin_right = 399.0
+margin_bottom = 589.0
+theme = ExtResource( 3 )
+
+[node name="Game Settings" type="Button" parent="Main Menu"]
+margin_top = 593.0
+margin_right = 399.0
+margin_bottom = 644.0
+theme = ExtResource( 3 )
+text = "Game Settings"
+align = 0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Exit Game" type="Button" parent="Main Menu"]
+margin_top = 648.0
+margin_right = 399.0
+margin_bottom = 699.0
+theme = ExtResource( 3 )
+text = "Quite Game"
+align = 0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="Main Menu"]
+margin_top = 703.0
+margin_right = 399.0
+margin_bottom = 1080.0
+size_flags_vertical = 3
+
+[node name="Create Game" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.007
+anchor_right = 0.215104
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="Margin" type="MarginContainer" parent="Create Game"]
+margin_right = 399.0
+margin_bottom = 347.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Create Game"]
+margin_top = 351.0
+margin_right = 399.0
+margin_bottom = 351.0
+
+[node name="Players in Lobby" type="Label" parent="Create Game"]
+margin_top = 355.0
+margin_right = 399.0
+margin_bottom = 406.0
+theme = ExtResource( 3 )
+text = "Players in Lobby"
+align = 1
+
+[node name="ItemList" type="ItemList" parent="Create Game"]
+margin_top = 410.0
+margin_right = 399.0
+margin_bottom = 510.0
+rect_min_size = Vector2( 0, 100 )
+theme = ExtResource( 3 )
+items = [ "Item 0", null, false, "Item 1", null, false ]
+
+[node name="Map Selection" type="Label" parent="Create Game"]
+margin_top = 514.0
+margin_right = 399.0
+margin_bottom = 565.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 11 )
+text = "Map Selection:"
+
+[node name="Map Button" type="OptionButton" parent="Create Game"]
+margin_top = 569.0
+margin_right = 399.0
+margin_bottom = 595.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 12 )
+text = "The Dark Pit of Gothmog of Udun"
+items = [ "The Dark Pit of Gothmog of Udun", null, false, 0, null, "The Warrens of Tenebrous Death", null, false, 1, null ]
+selected = 0
+
+[node name="Start Game" type="Button" parent="Create Game"]
+margin_top = 599.0
+margin_right = 399.0
+margin_bottom = 650.0
+theme = ExtResource( 3 )
+text = "Start Game"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="HSeparator" type="HSeparator" parent="Create Game"]
+margin_top = 654.0
+margin_right = 399.0
+margin_bottom = 674.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Create Game"]
+margin_top = 678.0
+margin_right = 399.0
+margin_bottom = 729.0
+theme = ExtResource( 3 )
+text = "Back"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Margin2" type="MarginContainer" parent="Create Game"]
+margin_top = 733.0
+margin_right = 399.0
+margin_bottom = 1080.0
+size_flags_vertical = 3
+
+[node name="Play Online" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.007
+anchor_right = 0.215104
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="Margin" type="MarginContainer" parent="Play Online"]
+margin_right = 399.0
+margin_bottom = 359.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Play Online"]
+margin_top = 363.0
+margin_right = 399.0
+margin_bottom = 363.0
+
+[node name="Players in Lobby" type="Label" parent="Play Online"]
+margin_top = 367.0
+margin_right = 399.0
+margin_bottom = 418.0
+theme = ExtResource( 3 )
+text = "Players in Lobby"
+align = 1
+
+[node name="ItemList" type="ItemList" parent="Play Online"]
+margin_top = 422.0
+margin_right = 399.0
+margin_bottom = 522.0
+rect_min_size = Vector2( 0, 100 )
+theme = ExtResource( 3 )
+items = [ "Item 0", null, false, "Item 1", null, false ]
+
+[node name="Label" type="Label" parent="Play Online"]
+margin_top = 526.0
+margin_right = 399.0
+margin_bottom = 557.0
+custom_fonts/font = SubResource( 8 )
+text = "IP-Adress:"
+
+[node name="IP Adress" type="LineEdit" parent="Play Online"]
+margin_top = 561.0
+margin_right = 399.0
+margin_bottom = 582.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 9 )
+
+[node name="Join Game" type="Button" parent="Play Online"]
+margin_top = 586.0
+margin_right = 399.0
+margin_bottom = 637.0
+theme = ExtResource( 3 )
+text = "Join Game"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="HSeparator" type="HSeparator" parent="Play Online"]
+margin_top = 641.0
+margin_right = 399.0
+margin_bottom = 661.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Play Online"]
+margin_top = 665.0
+margin_right = 399.0
+margin_bottom = 716.0
+theme = ExtResource( 3 )
+text = "Back"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Margin2" type="MarginContainer" parent="Play Online"]
+margin_top = 720.0
+margin_right = 399.0
+margin_bottom = 1080.0
+size_flags_vertical = 3
+
+[node name="Player Settings" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.007
+anchor_right = 0.215104
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="Margin" type="MarginContainer" parent="Player Settings"]
+margin_right = 399.0
+margin_bottom = 453.0
+size_flags_vertical = 3
+
+[node name="Label Playername" type="Label" parent="Player Settings"]
+margin_top = 457.0
+margin_right = 399.0
+margin_bottom = 508.0
+theme = ExtResource( 3 )
+text = "Playername:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Playername" type="LineEdit" parent="Player Settings"]
+margin_top = 512.0
+margin_right = 399.0
+margin_bottom = 543.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 10 )
+
+[node name="HSeparator" type="HSeparator" parent="Player Settings"]
+margin_top = 547.0
+margin_right = 399.0
+margin_bottom = 567.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Player Settings"]
+margin_top = 571.0
+margin_right = 399.0
+margin_bottom = 622.0
+theme = ExtResource( 3 )
+text = "Back"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Margin2" type="MarginContainer" parent="Player Settings"]
+margin_top = 626.0
+margin_right = 399.0
+margin_bottom = 1080.0
+size_flags_vertical = 3
+
+[node name="Game Settings" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.007
+anchor_right = 0.215104
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="Margin" type="MarginContainer" parent="Game Settings"]
+margin_right = 399.0
+margin_bottom = 498.0
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="Game Settings"]
+margin_top = 502.0
+margin_right = 399.0
+margin_bottom = 522.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Game Settings"]
+margin_top = 526.0
+margin_right = 399.0
+margin_bottom = 577.0
+theme = ExtResource( 3 )
+text = "Back"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Margin2" type="MarginContainer" parent="Game Settings"]
+margin_top = 581.0
+margin_right = 399.0
+margin_bottom = 1080.0
+size_flags_vertical = 3
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartMuliplayer" to="." method="_on_StartMuliplayer_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Map" to="." method="_on_Map_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
@@ -243,3 +632,16 @@ __meta__ = {
 [connection signal="pressed" from="Network/VBoxContainer/HBoxContainer/Create" to="." method="_on_Create_pressed"]
 [connection signal="pressed" from="Network/VBoxContainer/HBoxContainer/Join" to="." method="_on_Join_pressed"]
 [connection signal="pressed" from="Network/VBoxContainer/StartServer" to="." method="_on_StartServer_pressed"]
+[connection signal="pressed" from="Main Menu/Play Online" to="." method="_on_Play_Online_pressed"]
+[connection signal="pressed" from="Main Menu/Create Game" to="." method="_on_Create_Game_pressed"]
+[connection signal="pressed" from="Main Menu/Player Settings" to="." method="_on_Player_Settings_pressed"]
+[connection signal="pressed" from="Main Menu/Game Settings" to="." method="_on_Game_Settings_pressed"]
+[connection signal="pressed" from="Main Menu/Exit Game" to="." method="_on_Exit_Game_pressed"]
+[connection signal="pressed" from="Create Game/Start Game" to="." method="_on_Start_Game_pressed"]
+[connection signal="pressed" from="Create Game/Back" to="." method="_on_Back_pressed"]
+[connection signal="text_changed" from="Play Online/IP Adress" to="." method="_on_IP_Adress_text_changed"]
+[connection signal="pressed" from="Play Online/Join Game" to="." method="_on_Join_Game_pressed"]
+[connection signal="pressed" from="Play Online/Back" to="." method="_on_Back_pressed"]
+[connection signal="text_changed" from="Player Settings/Playername" to="." method="_on_Playername_text_changed"]
+[connection signal="pressed" from="Player Settings/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Game Settings/Back" to="." method="_on_Back_pressed"]

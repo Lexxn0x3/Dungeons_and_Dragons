@@ -52,10 +52,13 @@ func _on_Server_hitPlay(map):
 	var player = preload("res://Player/Player.tscn").instance()
 	player.set_name(str(selfPeerID))
 	player.set_network_master(selfPeerID)
-	if map == PoolIntArray([0]):
+	if map == 0:
 		mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
-	if map == PoolIntArray([1]):
+	if map == 1:
 		mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
+	else:
+		print("default map")
+		mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
 	map = mapScene.instance()
 	add_child(map)
 	add_child(player)
@@ -74,6 +77,7 @@ func _on_Server_hitPlay(map):
 	for p in Network.player_info:
 		player = preload("res://Player/Player.tscn").instance()
 		player.set_name(str(p))
+		print(p)
 		player.set_network_master(p)
 		print(player)
 		add_child(player)

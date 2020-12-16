@@ -22,7 +22,8 @@ func _ready():
 
 func _on_Area2D_area_entered(area):
 	#print(doorKey)
-	if Inventory.keys.has(doorKey) || doorKey == "":
+	if area.get_parent().keys.has(doorKey) || doorKey == "":
+	#if Inventory.keys.has(doorKey) || doorKey == "":
 		currDoorClosed = get_parent().doorClosed
 		if currDoorClosed:
 			button.text = "Open"
@@ -36,8 +37,8 @@ func _on_Area2D_area_exited(area):
 	button.hide()
 
 func _on_OpenDoorBtn_pressed():
-	if is_network_master():
-		rpc("_toggleDoor")
+	#if is_network_master():
+	rpc("_toggleDoor") 
 
 remotesync func _toggleDoor():
 	get_parent()._closeDoor(!currDoorClosed)

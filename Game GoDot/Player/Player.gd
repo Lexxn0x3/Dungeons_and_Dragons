@@ -40,6 +40,10 @@ func _ready():
 
 func _on_Area2D3_body_entered(body):
 	#print(body._getInformation())
-	Inventory.keys.insert(Inventory.keys.size(), body._getInformation())
+	#Inventory.keys.insert(Inventory.keys.size(), body._getInformation())
+	keys.insert(Inventory.keys.size(), body._getInformation())
 	#print(Inventory.keys)
 	body.queue_free()
+
+# ----------------INVENOTRY SYSTEM TEST-----------------------------------------
+var keys = []
