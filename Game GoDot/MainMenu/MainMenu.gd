@@ -112,6 +112,7 @@ func _on_Back_pressed():
 	get_node("Play Online").hide()
 	get_node("Create Game").hide()
 	get_node("Player Settings").hide()
+	get_node("Game Settings").hide()
 
 
 func _on_Create_Game_pressed():
@@ -131,8 +132,8 @@ func _on_Player_Settings_pressed():
 
 
 func _on_Game_Settings_pressed():
-	get_node("Game Settings").hide()
-	get_node("Player Settings").show()
+	get_node("Main Menu").hide()
+	get_node("Game Settings").show()
 
 
 func _on_Exit_Game_pressed():
@@ -162,3 +163,10 @@ func _on_Playername_text_changed(new_text):
 
 func _on_IP_Adress_text_changed(new_text):
 	ip_address = new_text
+
+
+func _on_Map_Button_toggled(button_pressed):
+	if button_pressed:
+		get_node("Create Game/HSeparator2").set("custom_constants/separation", 80)
+	else:
+		get_node("Create Game/HSeparator2").set("custom_constants/separation", 0)
