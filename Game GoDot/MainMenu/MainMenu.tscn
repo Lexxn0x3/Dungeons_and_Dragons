@@ -270,7 +270,6 @@ __meta__ = {
 }
 
 [node name="Main Menu" type="VBoxContainer" parent="."]
-visible = false
 anchor_left = 0.007
 anchor_right = 0.215104
 anchor_bottom = 1.0
@@ -354,6 +353,7 @@ margin_bottom = 1080.0
 size_flags_vertical = 3
 
 [node name="Create Game" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 0.007
 anchor_right = 0.215104
 anchor_bottom = 1.0
