@@ -24,24 +24,24 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 0 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=8]
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=9]
 size = 25
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=10]
 size = 30
 use_mipmaps = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=11]
 size = 20
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=12]
 size = 30
 font_data = ExtResource( 4 )
 
@@ -364,62 +364,63 @@ __meta__ = {
 
 [node name="Margin" type="MarginContainer" parent="Create Game"]
 margin_right = 399.0
-margin_bottom = 345.0
+margin_bottom = 295.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Create Game"]
-margin_top = 349.0
+margin_top = 299.0
 margin_right = 399.0
-margin_bottom = 349.0
+margin_bottom = 299.0
 
 [node name="Players in Lobby" type="Label" parent="Create Game"]
-margin_top = 353.0
+margin_top = 303.0
 margin_right = 399.0
-margin_bottom = 404.0
+margin_bottom = 354.0
 theme = ExtResource( 3 )
 text = "Players in Lobby"
 align = 1
 
 [node name="ItemList" type="ItemList" parent="Create Game"]
-margin_top = 408.0
+margin_top = 358.0
 margin_right = 399.0
-margin_bottom = 508.0
+margin_bottom = 458.0
 rect_min_size = Vector2( 0, 100 )
 theme = ExtResource( 3 )
 items = [ "Item 0", null, false, "Item 1", null, false ]
 
 [node name="Map Selection" type="Label" parent="Create Game"]
-margin_top = 512.0
+margin_top = 462.0
 margin_right = 399.0
-margin_bottom = 563.0
+margin_bottom = 513.0
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 8 )
 text = "Map Selection:"
 
 [node name="Map Button" type="OptionButton" parent="Create Game"]
-margin_top = 567.0
+margin_top = 517.0
 margin_right = 399.0
-margin_bottom = 593.0
+margin_bottom = 543.0
+rect_pivot_offset = Vector2( 47.4998, 18.6412 )
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 9 )
 text = "The Dark Pit of Gothmog of Udun"
-items = [ "The Dark Pit of Gothmog of Udun", null, false, 0, null, "The Warrens of Tenebrous Death", null, false, 1, null ]
+items = [ "The Dark Pit of Gothmog of Udun", null, false, 0, null, "The Warrens of Tenebrous Death", null, false, 1, null, "Dungeon of the Golden Monk", null, false, 2, null ]
 selected = 0
 
 [node name="HSeparator2" type="HSeparator" parent="Create Game"]
-margin_top = 597.0
+margin_top = 547.0
 margin_right = 399.0
-margin_bottom = 597.0
+margin_bottom = 647.0
 theme = ExtResource( 3 )
-custom_constants/separation = 0
+custom_constants/separation = 100
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Start Game" type="Button" parent="Create Game"]
-margin_top = 601.0
+margin_top = 651.0
 margin_right = 399.0
-margin_bottom = 652.0
+margin_bottom = 702.0
 theme = ExtResource( 3 )
 text = "Start Game"
 align = 0
@@ -429,18 +430,18 @@ __meta__ = {
 }
 
 [node name="HSeparator" type="HSeparator" parent="Create Game"]
-margin_top = 656.0
+margin_top = 706.0
 margin_right = 399.0
-margin_bottom = 676.0
+margin_bottom = 726.0
 theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Back" type="Button" parent="Create Game"]
-margin_top = 680.0
+margin_top = 730.0
 margin_right = 399.0
-margin_bottom = 731.0
+margin_bottom = 781.0
 theme = ExtResource( 3 )
 text = "Back"
 align = 0
@@ -450,7 +451,7 @@ __meta__ = {
 }
 
 [node name="Margin2" type="MarginContainer" parent="Create Game"]
-margin_top = 735.0
+margin_top = 785.0
 margin_right = 399.0
 margin_bottom = 1080.0
 size_flags_vertical = 3
@@ -495,7 +496,7 @@ items = [ "Item 0", null, false, "Item 1", null, false ]
 margin_top = 526.0
 margin_right = 399.0
 margin_bottom = 557.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 text = "IP-Adress:"
 
 [node name="IP Adress" type="LineEdit" parent="Play Online"]
@@ -503,7 +504,7 @@ margin_top = 561.0
 margin_right = 399.0
 margin_bottom = 582.0
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 11 )
 
 [node name="Join Game" type="Button" parent="Play Online"]
 margin_top = 586.0
@@ -574,7 +575,7 @@ margin_top = 512.0
 margin_right = 399.0
 margin_bottom = 543.0
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
 
 [node name="HSeparator" type="HSeparator" parent="Player Settings"]
 margin_top = 547.0
@@ -657,12 +658,14 @@ size_flags_vertical = 3
 [connection signal="pressed" from="Main Menu/Player Settings" to="." method="_on_Player_Settings_pressed"]
 [connection signal="pressed" from="Main Menu/Game Settings" to="." method="_on_Game_Settings_pressed"]
 [connection signal="pressed" from="Main Menu/Exit Game" to="." method="_on_Exit_Game_pressed"]
+[connection signal="ready" from="Create Game/Map Button" to="." method="_on_Map_Button_ready"]
 [connection signal="toggled" from="Create Game/Map Button" to="." method="_on_Map_Button_toggled"]
 [connection signal="pressed" from="Create Game/Start Game" to="." method="_on_Start_Game_pressed"]
 [connection signal="pressed" from="Create Game/Back" to="." method="_on_Back_pressed"]
 [connection signal="text_changed" from="Play Online/IP Adress" to="." method="_on_IP_Adress_text_changed"]
 [connection signal="pressed" from="Play Online/Join Game" to="." method="_on_Join_Game_pressed"]
 [connection signal="pressed" from="Play Online/Back" to="." method="_on_Back_pressed"]
+[connection signal="ready" from="Player Settings/Playername" to="." method="_on_Playername_ready"]
 [connection signal="text_changed" from="Player Settings/Playername" to="." method="_on_Playername_text_changed"]
 [connection signal="pressed" from="Player Settings/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="Game Settings/Back" to="." method="_on_Back_pressed"]

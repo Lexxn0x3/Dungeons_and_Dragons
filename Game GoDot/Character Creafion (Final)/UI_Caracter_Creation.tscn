@@ -225,6 +225,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 text = "10"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Modifire" type="Label" parent="Background_Info/TabContainer/Stats/Ability Scores/Dexterity/Score"]
 anchor_top = 1.0

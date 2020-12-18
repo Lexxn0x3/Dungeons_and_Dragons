@@ -56,6 +56,8 @@ func _on_Server_hitPlay(map):
 		mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")
 	if map == 1:
 		mapScene = load("res://Maps/The Warrens of Tenebrous/The Warrens of Tenebrous.tscn")
+	if map == 2:
+		mapScene = load("res://Maps/Dungeon of the Golden Monk/Dungeon of the Golden Monk.tscn")
 	else:
 		print("default map")
 		mapScene = load("res://Maps/The Dark Pit of Gothmog of Udun/The Dark Pit of Gothmog of Udun.tscn")

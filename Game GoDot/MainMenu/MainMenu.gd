@@ -159,6 +159,7 @@ func _on_Join_Game_pressed():
 
 func _on_Playername_text_changed(new_text):
 	player_name = new_text
+	get_parent()._set_ConfigFile("PlayerSettings", "Playername", player_name)
 
 
 func _on_IP_Adress_text_changed(new_text):
@@ -166,7 +167,22 @@ func _on_IP_Adress_text_changed(new_text):
 
 
 func _on_Map_Button_toggled(button_pressed):
-	if button_pressed:
-		get_node("Create Game/HSeparator2").set("custom_constants/separation", 80)
+	if button_pressed and get_node("Create Game/HSeparator2").get("custom_constants/separation") == 0:
+		
+		#get_node("Create Game/MarginContainer").rect_min_size = Vector2(0,150)
+		#get_node("Create Game/HSeparator2").set("custom_constants/separation", 150)
+		#get_node("Create Game/Map Button").hide()
+		#get_node("Create Game/Map Button").draw
+		pass
 	else:
-		get_node("Create Game/HSeparator2").set("custom_constants/separation", 0)
+		#get_node("Create Game/HSeparator2").set("custom_constants/separation", 0)
+		pass
+
+
+func _on_Playername_ready():
+	if get_parent()._read_ConfigFile("PlayerSettings", "Playername") != null:
+		get_node("Player Settings/Playername").text = get_parent()._read_ConfigFile("PlayerSettings", "Playername")
+
+
+func _on_Map_Button_ready():
+	pass

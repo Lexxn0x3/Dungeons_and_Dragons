@@ -48,17 +48,17 @@ bg_color = Color( 0.6, 0.6, 0.6, 0.247059 )
 [sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.6, 0.6, 0.6, 0.0862745 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=13]
 size = 25
 font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="StyleBoxFlat" id=16]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.6, 0.6, 0.6, 0.243137 )
 border_width_left = 2
 border_width_top = 2
@@ -295,16 +295,16 @@ PopupMenu/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 PopupMenu/colors/font_color_hover = Color( 0.498039, 0.498039, 0.498039, 1 )
 PopupMenu/constants/hseparation = 4
 PopupMenu/constants/vseparation = 4
-PopupMenu/fonts/font = SubResource( 14 )
+PopupMenu/fonts/font = SubResource( 13 )
 PopupMenu/icons/checked = null
 PopupMenu/icons/radio_checked = null
 PopupMenu/icons/radio_unchecked = null
 PopupMenu/icons/submenu = null
 PopupMenu/icons/unchecked = null
-PopupMenu/styles/hover = SubResource( 15 )
+PopupMenu/styles/hover = SubResource( 14 )
 PopupMenu/styles/labeled_separator_left = null
 PopupMenu/styles/labeled_separator_right = null
-PopupMenu/styles/panel = SubResource( 16 )
+PopupMenu/styles/panel = SubResource( 15 )
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
 PopupPanel/styles/panel = null
@@ -407,7 +407,7 @@ TextEdit/icons/space = null
 TextEdit/icons/tab = null
 TextEdit/styles/completion = null
 TextEdit/styles/focus = null
-TextEdit/styles/normal = SubResource( 13 )
+TextEdit/styles/normal = SubResource( 16 )
 TextEdit/styles/read_only = null
 ToolButton/colors/font_color = Color( 0, 0, 0, 1 )
 ToolButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
